@@ -1,0 +1,14 @@
+{
+  "templates": {
+    "repository": "lowcodeunit-devkit/lcu-cli-templates-core",
+    "scope": "@napkin-ide",
+    "workspace": "lcu-data-flow-iot-provisioning-pack"
+  },
+  "config": {
+    "wc": ["wc/lcu-data-flow-iot-provisioning-pack.lcu.js"],
+    "solutions": {},
+    "elements": {},
+    "flux": {},
+    "dependencies": {}
+  }
+}
