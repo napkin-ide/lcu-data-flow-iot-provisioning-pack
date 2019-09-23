@@ -9,12 +9,12 @@
     "solutions": {},
     "elements": {},
     "data-flows": {
-      "pack": {
+      "Pack": {
         "Name": "IoT Provisioning",
         "Description": "A pack of Low Code Units for the Data Flow tool that allows for the provisioning of IoT Infrastructure.",
         "Lookup": "iot-provisioning"
       },
-      "options": [
+      "Options": [
         {
           "ModuleType": "data-stream",
           "ControlType": "Gate",
@@ -106,7 +106,7 @@
           "OutgoingConnectionTypes": []
         }
       ],
-      "styles": [
+      "Displays": [
         {
           "ModuleType": "data-stream",
           "Category": "Data Sources",
