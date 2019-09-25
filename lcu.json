@@ -12,7 +12,7 @@
       "Pack": {
         "Name": "IoT Provisioning",
         "Description": "A pack of Low Code Units for the Data Flow tool that allows for the provisioning of IoT Infrastructure.",
-        "Lookup": "iot-provisioning"
+        "Lookup": "lcu-data-flow-iot-provisioning-pack"
       },
       "Options": [
         {
@@ -110,7 +110,7 @@
         {
           "ModuleType": "data-stream",
           "Category": "Data Sources",
-          "Element": "lcu-data-flow-iot-provisioning-pack-data-stream",
+          "Element": "data-stream",
           "Height": 200,
           "Icon": "settings_input_antenna",
           "Width": 200,
@@ -119,7 +119,7 @@
         {
           "ModuleType": "device-stream",
           "Category": "Data Sources",
-          "Element": "lcu-data-flow-iot-provisioning-pack-device-stream",
+          "Element": "device-stream",
           "Height": 200,
           "Icon": "wifi_tethering",
           "Width": 200,
@@ -128,7 +128,7 @@
         {
           "ModuleType": "master-data",
           "Category": "Data Sources",
-          "Element": "lcu-data-flow-iot-provisioning-pack-master-data",
+          "Element": "master-data",
           "Height": 200,
           "Icon": "graphic_eq",
           "Width": 200,
@@ -137,7 +137,7 @@
         {
           "ModuleType": "cold-storage",
           "Category": "Storage",
-          "Element": "lcu-data-flow-iot-provisioning-pack-cold-storage",
+          "Element": "cold-storage",
           "Height": 200,
           "Icon": "assessment",
           "Width": 200,
@@ -146,7 +146,7 @@
         {
           "ModuleType": "warm-storage",
           "Category": "Storage",
-          "Element": "lcu-data-flow-iot-provisioning-pack-warm-storage",
+          "Element": "warm-storage",
           "Height": 200,
           "Icon": "assessment",
           "Width": 200,
@@ -155,7 +155,7 @@
         {
           "ModuleType": "hot-storage",
           "Category": "Storage",
-          "Element": "lcu-data-flow-iot-provisioning-pack-hot-storage",
+          "Element": "hot-storage",
           "Height": 200,
           "Icon": "dashboard",
           "Width": 200,
@@ -164,7 +164,7 @@
         {
           "ModuleType": "static-data-streamer",
           "Category": "Development",
-          "Element": "lcu-data-flow-iot-provisioning-pack-static-data-streamer",
+          "Element": "static-data-streamer",
           "Height": 200,
           "Icon": "autorenew",
           "Width": 200,
@@ -173,7 +173,7 @@
         {
           "ModuleType": "device-manager",
           "Category": "Development",
-          "Element": "lcu-data-flow-iot-provisioning-pack-device-manager",
+          "Element": "device-manager",
           "Height": 200,
           "Icon": "autorenew",
           "Width": 200,
@@ -182,7 +182,7 @@
         {
           "ModuleType": "data-map",
           "Category": "Translate",
-          "Element": "lcu-data-flow-iot-provisioning-pack-data-map",
+          "Element": "data-map",
           "Height": 200,
           "Icon": "call_merge",
           "Width": 200,
