@@ -112,7 +112,7 @@
           "Category": "Data Sources",
           "Element": "data-stream",
           "Height": 200,
-          "Icon": "settings_input_antenna",
+          "Icon": { "Icon": "settings_input_antenna" },
           "Width": 200,
           "Shape": "Rectangle"
         },
@@ -121,7 +121,7 @@
           "Category": "Data Sources",
           "Element": "device-stream",
           "Height": 200,
-          "Icon": "wifi_tethering",
+          "Icon": { "Icon": "wifi_tethering" },
           "Width": 200,
           "Shape": "Rectangle"
         },
@@ -130,7 +130,7 @@
           "Category": "Data Sources",
           "Element": "master-data",
           "Height": 200,
-          "Icon": "graphic_eq",
+          "Icon": { "Icon": "graphic_eq" },
           "Width": 200,
           "Shape": "Rectangle"
         },
@@ -139,7 +139,7 @@
           "Category": "Storage",
           "Element": "cold-storage",
           "Height": 200,
-          "Icon": "assessment",
+          "Icon": { "Icon": "assessment" },
           "Width": 200,
           "Shape": "Ellipse"
         },
@@ -148,7 +148,7 @@
           "Category": "Storage",
           "Element": "warm-storage",
           "Height": 200,
-          "Icon": "assessment",
+          "Icon": { "Icon": "assessment" },
           "Width": 200,
           "Shape": "Ellipse"
         },
@@ -157,7 +157,7 @@
           "Category": "Storage",
           "Element": "hot-storage",
           "Height": 200,
-          "Icon": "dashboard",
+          "Icon": { "Icon": "dashboard" },
           "Width": 200,
           "Shape": "Ellipse"
         },
@@ -166,7 +166,7 @@
           "Category": "Development",
           "Element": "static-data-streamer",
           "Height": 200,
-          "Icon": "autorenew",
+          "Icon": { "Icon": "autorenew" },
           "Width": 200,
           "Shape": "Ellipse"
         },
@@ -175,16 +175,16 @@
           "Category": "Development",
           "Element": "device-manager",
           "Height": 200,
-          "Icon": "autorenew",
+          "Icon": { "Icon": "autorenew" },
           "Width": 200,
           "Shape": "Ellipse"
         },
         {
           "ModuleType": "data-map",
-          "Category": "Translate",
+          "Category": "Translation",
           "Element": "data-map",
           "Height": 200,
-          "Icon": "call_merge",
+          "Icon": { "Icon": "call_merge" },
           "Width": 200,
           "Shape": "Custom"
         }
