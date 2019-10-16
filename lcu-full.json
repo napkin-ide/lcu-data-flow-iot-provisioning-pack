@@ -36,6 +36,16 @@
           "OutgoingConnectionTypes": []
         },
         {
+          "ModuleType": "master-data",
+          "ControlType": "Gate",
+          "Description": "Import your organizational data stores and taxonomy to map against your data streams.",
+          "IncomingConnectionLimit": -1,
+          "IncomingConnectionTypes": [],
+          "Name": "Master Data",
+          "OutgoingConnectionLimit": -1,
+          "OutgoingConnectionTypes": []
+        },
+        {
           "ModuleType": "cold-storage",
           "ControlType": "Gate",
           "Description": "For archive/cold datasets that can be used to create richer datasets in the future.",
@@ -64,6 +74,26 @@
           "Name": "Hot Storage",
           "OutgoingConnectionLimit": -1,
           "OutgoingConnectionTypes": []
+        },
+        {
+          "ModuleType": "static-data-streamer",
+          "ControlType": "Direct",
+          "Description": "Take a static data source and treat it as a live stream.",
+          "IncomingConnectionLimit": -1,
+          "IncomingConnectionTypes": [],
+          "Name": "Static Data Streamer",
+          "OutgoingConnectionLimit": -1,
+          "OutgoingConnectionTypes": ["data-stream"]
+        },
+        {
+          "ModuleType": "device-manager",
+          "ControlType": "Direct",
+          "Description": "Configure a real-time stream of data.",
+          "IncomingConnectionLimit": -1,
+          "IncomingConnectionTypes": [],
+          "Name": "Device Manager",
+          "OutgoingConnectionLimit": -1,
+          "OutgoingConnectionTypes": ["data-stream", "device-stream"]
         },
         {
           "ModuleType": "data-map",
@@ -96,6 +126,15 @@
           "Shape": "Rectangle"
         },
         {
+          "ModuleType": "master-data",
+          "Category": "Data Sources",
+          "Element": "master-data",
+          "Height": 200,
+          "Icon": { "Icon": "graphic_eq" },
+          "Width": 200,
+          "Shape": "Rectangle"
+        },
+        {
           "ModuleType": "cold-storage",
           "Category": "Storage",
           "Element": "cold-storage",
@@ -119,6 +158,24 @@
           "Element": "hot-storage",
           "Height": 200,
           "Icon": { "Icon": "dashboard" },
+          "Width": 200,
+          "Shape": "Ellipse"
+        },
+        {
+          "ModuleType": "static-data-streamer",
+          "Category": "Development",
+          "Element": "static-data-streamer",
+          "Height": 200,
+          "Icon": { "Icon": "autorenew" },
+          "Width": 200,
+          "Shape": "Ellipse"
+        },
+        {
+          "ModuleType": "device-manager",
+          "Category": "Development",
+          "Element": "device-manager",
+          "Height": 200,
+          "Icon": { "Icon": "autorenew" },
           "Width": 200,
           "Shape": "Ellipse"
         },
