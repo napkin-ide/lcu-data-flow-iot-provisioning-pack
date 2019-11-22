@@ -19,50 +19,50 @@
           "ModuleType": "data-stream",
           "ControlType": "Gate",
           "Description": "Stream your non device data through Fathym for analysis and optimization.",
-          "IncomingConnectionLimit": -1,
+          "IncomingConnectionLimit": 0,
           "IncomingConnectionTypes": [],
           "Name": "Data Stream",
-          "OutgoingConnectionLimit": -1,
-          "OutgoingConnectionTypes": []
+          "OutgoingConnectionLimit": 1,
+          "OutgoingConnectionTypes": ["data-map"]
         },
         {
           "ModuleType": "device-stream",
           "ControlType": "Gate",
           "Description": "Connect your devices through a secure IoT Hub... manage, command, analyze, and optimize.",
-          "IncomingConnectionLimit": -1,
-          "IncomingConnectionTypes": ["device-manager"],
+          "IncomingConnectionLimit": 0,
+          "IncomingConnectionTypes": [],
           "Name": "Device Stream",
-          "OutgoingConnectionLimit": -1,
-          "OutgoingConnectionTypes": []
+          "OutgoingConnectionLimit": 1,
+          "OutgoingConnectionTypes": ["data-map"]
         },
         {
           "ModuleType": "cold-storage",
           "ControlType": "Gate",
           "Description": "For archive/cold datasets that can be used to create richer datasets in the future.",
-          "IncomingConnectionLimit": -1,
-          "IncomingConnectionTypes": [],
+          "IncomingConnectionLimit": 1,
+          "IncomingConnectionTypes": ["data-map"],
           "Name": "Cold Storage",
-          "OutgoingConnectionLimit": -1,
+          "OutgoingConnectionLimit": 0,
           "OutgoingConnectionTypes": []
         },
         {
           "ModuleType": "warm-storage",
           "ControlType": "Gate",
           "Description": "For highly available datasets requiring querying, aggregation, and massive scale.",
-          "IncomingConnectionLimit": -1,
-          "IncomingConnectionTypes": [],
+          "IncomingConnectionLimit": 1,
+          "IncomingConnectionTypes": ["data-map"],
           "Name": "Warm Storage",
-          "OutgoingConnectionLimit": -1,
+          "OutgoingConnectionLimit": 0,
           "OutgoingConnectionTypes": []
         },
         {
           "ModuleType": "hot-storage",
           "ControlType": "Gate",
           "Description": "Real-Time data feeds for connections with Fathym Server, external partners, and other cloud services.",
-          "IncomingConnectionLimit": -1,
-          "IncomingConnectionTypes": [],
+          "IncomingConnectionLimit": 1,
+          "IncomingConnectionTypes": ["data-map"],
           "Name": "Hot Storage",
-          "OutgoingConnectionLimit": -1,
+          "OutgoingConnectionLimit": 0,
           "OutgoingConnectionTypes": []
         },
         {
@@ -70,10 +70,14 @@
           "ControlType": "Flow",
           "Description": "Map data stream into a specfic schema to be carried down the flow.  Setup alerts that control warnings or pausing a stream flow.",
           "IncomingConnectionLimit": -1,
-          "IncomingConnectionTypes": [],
+          "IncomingConnectionTypes": ["data-stream", "device-stream"],
           "Name": "Data Map",
           "OutgoingConnectionLimit": -1,
-          "OutgoingConnectionTypes": []
+          "OutgoingConnectionTypes": [
+            "cold-storage",
+            "warm-storage",
+            "hot-storage"
+          ]
         }
       ],
       "Displays": [
