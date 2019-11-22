@@ -69,7 +69,7 @@
           "ModuleType": "data-map",
           "ControlType": "Flow",
           "Description": "Map data stream into a specfic schema to be carried down the flow.  Setup alerts that control warnings or pausing a stream flow.",
-          "IncomingConnectionLimit": -1,
+          "IncomingConnectionLimit": 1,
           "IncomingConnectionTypes": ["data-stream", "device-stream"],
           "Name": "Data Map",
           "OutgoingConnectionLimit": -1,
