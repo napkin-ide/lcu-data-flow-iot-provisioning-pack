@@ -1,23 +1,41 @@
 import { NgModule, DoBootstrap, Injector } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { createCustomElement } from '@angular/elements';
-import { FathymSharedModule, LCUServiceSettings, JSONSchema } from '@lcu/common';
+import {
+  FathymSharedModule
+} from '@lcu/common';
 import { BrowserModule } from '@angular/platform-browser';
-import { LcuDataFlowIotProvisioningPackModule } from '@napkin-ide/lcu-data-flow-iot-provisioning-pack-common';
+import {
+  LcuDataFlowIotProvisioningPackModule,
+  LcuDataFlowIotProvisioningPackDataStreamElementComponent,
+  SelectorLcuDataFlowIotProvisioningPackDataStreamElement
+} from '@napkin-ide/lcu-data-flow-iot-provisioning-pack-common';
 
 @NgModule({
   declarations: [],
-  imports: [BrowserModule, BrowserAnimationsModule, FathymSharedModule, LcuDataFlowIotProvisioningPackModule.forRoot()],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    FathymSharedModule,
+    LcuDataFlowIotProvisioningPackModule.forRoot()
+  ],
   exports: [LcuDataFlowIotProvisioningPackModule],
-  providers: [
-  ]
+  providers: []
 })
 export class AppModule implements DoBootstrap {
   //  Constructors
-  constructor(protected injector: Injector) {
-  }
+  constructor(protected injector: Injector) {}
 
   //  Life Cycle
   public ngDoBootstrap() {
+    const dfmMgr = createCustomElement(
+      LcuDataFlowIotProvisioningPackDataStreamElementComponent,
+      { injector: this.injector }
+    );
+
+    customElements.define(
+      SelectorLcuDataFlowIotProvisioningPackDataStreamElement,
+      dfmMgr
+    );
   }
 }
