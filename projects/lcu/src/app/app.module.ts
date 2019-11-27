@@ -1,14 +1,22 @@
 import { NgModule, DoBootstrap, Injector } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { createCustomElement } from '@angular/elements';
-import {
-  FathymSharedModule
-} from '@lcu/common';
+import { FathymSharedModule } from '@lcu/common';
 import { BrowserModule } from '@angular/platform-browser';
 import {
   LcuDataFlowIotProvisioningPackModule,
   LcuDataFlowIotProvisioningPackDataStreamElementComponent,
-  SelectorLcuDataFlowIotProvisioningPackDataStreamElement
+  SelectorLcuDataFlowIotProvisioningPackDataStreamElement,
+  LcuDataFlowIotProvisioningPackDeviceStreamElementComponent,
+  SelectorLcuDataFlowIotProvisioningPackDeviceStreamElement,
+  LcuDataFlowIotProvisioningPackColdStorageElementComponent,
+  SelectorLcuDataFlowIotProvisioningPackColdStorageElement,
+  SelectorLcuDataFlowIotProvisioningPackHotStorageElement,
+  LcuDataFlowIotProvisioningPackHotStorageElementComponent,
+  SelectorLcuDataFlowIotProvisioningPackWarmStorageElement,
+  LcuDataFlowIotProvisioningPackWarmStorageElementComponent,
+  LcuDataFlowIotProvisioningPackDataMapElementComponent,
+  SelectorLcuDataFlowIotProvisioningPackDataMapElement
 } from '@napkin-ide/lcu-data-flow-iot-provisioning-pack-common';
 
 @NgModule({
@@ -28,14 +36,64 @@ export class AppModule implements DoBootstrap {
 
   //  Life Cycle
   public ngDoBootstrap() {
-    const dfmMgr = createCustomElement(
+    const dsMgr = createCustomElement(
       LcuDataFlowIotProvisioningPackDataStreamElementComponent,
       { injector: this.injector }
     );
 
     customElements.define(
       SelectorLcuDataFlowIotProvisioningPackDataStreamElement,
-      dfmMgr
+      dsMgr
+    );
+
+    const desMgr = createCustomElement(
+      LcuDataFlowIotProvisioningPackDeviceStreamElementComponent,
+      { injector: this.injector }
+    );
+
+    customElements.define(
+      SelectorLcuDataFlowIotProvisioningPackDeviceStreamElement,
+      desMgr
+    );
+
+    const csMgr = createCustomElement(
+      LcuDataFlowIotProvisioningPackColdStorageElementComponent,
+      { injector: this.injector }
+    );
+
+    customElements.define(
+      SelectorLcuDataFlowIotProvisioningPackColdStorageElement,
+      csMgr
+    );
+
+    const hsMgr = createCustomElement(
+      LcuDataFlowIotProvisioningPackHotStorageElementComponent,
+      { injector: this.injector }
+    );
+
+    customElements.define(
+      SelectorLcuDataFlowIotProvisioningPackHotStorageElement,
+      hsMgr
+    );
+
+    const wsMgr = createCustomElement(
+      LcuDataFlowIotProvisioningPackWarmStorageElementComponent,
+      { injector: this.injector }
+    );
+
+    customElements.define(
+      SelectorLcuDataFlowIotProvisioningPackWarmStorageElement,
+      wsMgr
+    );
+
+    const dmMgr = createCustomElement(
+      LcuDataFlowIotProvisioningPackDataMapElementComponent,
+      { injector: this.injector }
+    );
+
+    customElements.define(
+      SelectorLcuDataFlowIotProvisioningPackDataMapElement,
+      dmMgr
     );
   }
 }

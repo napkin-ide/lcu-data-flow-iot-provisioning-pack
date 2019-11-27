@@ -1,142 +1,185 @@
 {
-  "templates": {
-    "repository": "lowcodeunit-devkit/lcu-cli-templates-core",
-    "scope": "@napkin-ide",
-    "workspace": "lcu-data-flow-iot-provisioning-pack"
-  },
-  "config": {
-    "wc": ["wc/lcu-data-flow-iot-provisioning-pack.lcu.js"],
-    "solutions": {},
-    "elements": {},
-    "data-flows": {
-      "Pack": {
-        "Name": "IoT Provisioning",
-        "Description": "A pack of Low Code Units for the Data Flow tool that allows for the provisioning of IoT Infrastructure.",
-        "Lookup": "lcu-data-flow-iot-provisioning-pack"
-      },
-      "Options": [
-        {
-          "ModuleType": "data-stream",
-          "ControlType": "Gate",
-          "Description": "Stream your non device data through Fathym for analysis and optimization.",
-          "IncomingConnectionLimit": 0,
-          "IncomingConnectionTypes": [],
-          "Name": "Data Stream",
-          "OutgoingConnectionLimit": 1,
-          "OutgoingConnectionTypes": ["data-map"]
-        },
-        {
-          "ModuleType": "device-stream",
-          "ControlType": "Gate",
-          "Description": "Connect your devices through a secure IoT Hub... manage, command, analyze, and optimize.",
-          "IncomingConnectionLimit": 0,
-          "IncomingConnectionTypes": [],
-          "Name": "Device Stream",
-          "OutgoingConnectionLimit": 1,
-          "OutgoingConnectionTypes": ["data-map"]
-        },
-        {
-          "ModuleType": "cold-storage",
-          "ControlType": "Gate",
-          "Description": "For archive/cold datasets that can be used to create richer datasets in the future.",
-          "IncomingConnectionLimit": 1,
-          "IncomingConnectionTypes": ["data-map"],
-          "Name": "Cold Storage",
-          "OutgoingConnectionLimit": 0,
-          "OutgoingConnectionTypes": []
-        },
-        {
-          "ModuleType": "warm-storage",
-          "ControlType": "Gate",
-          "Description": "For highly available datasets requiring querying, aggregation, and massive scale.",
-          "IncomingConnectionLimit": 1,
-          "IncomingConnectionTypes": ["data-map"],
-          "Name": "Warm Storage",
-          "OutgoingConnectionLimit": 0,
-          "OutgoingConnectionTypes": []
-        },
-        {
-          "ModuleType": "hot-storage",
-          "ControlType": "Gate",
-          "Description": "Real-Time data feeds for connections with Fathym Server, external partners, and other cloud services.",
-          "IncomingConnectionLimit": 1,
-          "IncomingConnectionTypes": ["data-map"],
-          "Name": "Hot Storage",
-          "OutgoingConnectionLimit": 0,
-          "OutgoingConnectionTypes": []
-        },
-        {
-          "ModuleType": "data-map",
-          "ControlType": "Flow",
-          "Description": "Map data stream into a specfic schema to be carried down the flow.  Setup alerts that control warnings or pausing a stream flow.",
-          "IncomingConnectionLimit": 1,
-          "IncomingConnectionTypes": ["data-stream", "device-stream"],
-          "Name": "Data Map",
-          "OutgoingConnectionLimit": -1,
-          "OutgoingConnectionTypes": [
-            "cold-storage",
-            "warm-storage",
-            "hot-storage"
-          ]
-        }
-      ],
-      "Displays": [
-        {
-          "ModuleType": "data-stream",
-          "Category": "Data Sources",
-          "Element": "data-stream",
-          "Height": 200,
-          "Icon": { "Icon": "settings_input_antenna" },
-          "Width": 200,
-          "Shape": "Rectangle"
-        },
-        {
-          "ModuleType": "device-stream",
-          "Category": "Data Sources",
-          "Element": "device-stream",
-          "Height": 200,
-          "Icon": { "Icon": "wifi_tethering" },
-          "Width": 200,
-          "Shape": "Rectangle"
-        },
-        {
-          "ModuleType": "cold-storage",
-          "Category": "Storage",
-          "Element": "cold-storage",
-          "Height": 200,
-          "Icon": { "Icon": "assessment" },
-          "Width": 200,
-          "Shape": "Ellipse"
-        },
-        {
-          "ModuleType": "warm-storage",
-          "Category": "Storage",
-          "Element": "warm-storage",
-          "Height": 200,
-          "Icon": { "Icon": "assessment" },
-          "Width": 200,
-          "Shape": "Ellipse"
-        },
-        {
-          "ModuleType": "hot-storage",
-          "Category": "Storage",
-          "Element": "hot-storage",
-          "Height": 200,
-          "Icon": { "Icon": "dashboard" },
-          "Width": 200,
-          "Shape": "Ellipse"
-        },
-        {
-          "ModuleType": "data-map",
-          "Category": "Translation",
-          "Element": "data-map",
-          "Height": 200,
-          "Icon": { "Icon": "call_merge" },
-          "Width": 200,
-          "Shape": "Custom"
-        }
-      ]
-    },
-    "dependencies": {}
-  }
+	"templates": {
+		"repository": "lowcodeunit-devkit/lcu-cli-templates-core",
+		"scope": "@napkin-ide",
+		"workspace": "lcu-data-flow-iot-provisioning-pack"
+	},
+	"config": {
+		"wc": [
+			"wc/lcu-data-flow-iot-provisioning-pack.lcu.js"
+		],
+		"solutions": {
+			"device-stream-manager": {
+				"element": "lcu-data-flow-iot-provisioning-pack-device-stream-element"
+			},
+			"cold-storage-manager": {
+				"element": "lcu-data-flow-iot-provisioning-pack-cold-storage-element"
+			},
+			"warm-storage-manager": {
+				"element": "lcu-data-flow-iot-provisioning-pack-warm-storage-element"
+			},
+			"data-map-manager": {
+				"element": "lcu-data-flow-iot-provisioning-pack-data-map-element"
+			},
+			"hot-storage-manager": {
+				"element": "lcu-data-flow-iot-provisioning-pack-hot-storage-element"
+			}
+		},
+		"elements": {},
+		"data-flows": {
+			"Pack": {
+				"Name": "IoT Provisioning",
+				"Description": "A pack of Low Code Units for the Data Flow tool that allows for the provisioning of IoT Infrastructure.",
+				"Lookup": "lcu-data-flow-iot-provisioning-pack"
+			},
+			"Options": [
+				{
+					"ModuleType": "data-stream",
+					"ControlType": "Gate",
+					"Description": "Stream your non device data through Fathym for analysis and optimization.",
+					"IncomingConnectionLimit": 0,
+					"IncomingConnectionTypes": [],
+					"Name": "Data Stream",
+					"OutgoingConnectionLimit": 1,
+					"OutgoingConnectionTypes": [
+						"data-map"
+					]
+				},
+				{
+					"ModuleType": "device-stream",
+					"ControlType": "Gate",
+					"Description": "Connect your devices through a secure IoT Hub... manage, command, analyze, and optimize.",
+					"IncomingConnectionLimit": 0,
+					"IncomingConnectionTypes": [],
+					"Name": "Device Stream",
+					"OutgoingConnectionLimit": 1,
+					"OutgoingConnectionTypes": [
+						"data-map"
+					]
+				},
+				{
+					"ModuleType": "cold-storage",
+					"ControlType": "Gate",
+					"Description": "For archive/cold datasets that can be used to create richer datasets in the future.",
+					"IncomingConnectionLimit": 1,
+					"IncomingConnectionTypes": [
+						"data-map"
+					],
+					"Name": "Cold Storage",
+					"OutgoingConnectionLimit": 0,
+					"OutgoingConnectionTypes": []
+				},
+				{
+					"ModuleType": "warm-storage",
+					"ControlType": "Gate",
+					"Description": "For highly available datasets requiring querying, aggregation, and massive scale.",
+					"IncomingConnectionLimit": 1,
+					"IncomingConnectionTypes": [
+						"data-map"
+					],
+					"Name": "Warm Storage",
+					"OutgoingConnectionLimit": 0,
+					"OutgoingConnectionTypes": []
+				},
+				{
+					"ModuleType": "hot-storage",
+					"ControlType": "Gate",
+					"Description": "Real-Time data feeds for connections with Fathym Server, external partners, and other cloud services.",
+					"IncomingConnectionLimit": 1,
+					"IncomingConnectionTypes": [
+						"data-map"
+					],
+					"Name": "Hot Storage",
+					"OutgoingConnectionLimit": 0,
+					"OutgoingConnectionTypes": []
+				},
+				{
+					"ModuleType": "data-map",
+					"ControlType": "Flow",
+					"Description": "Map data stream into a specfic schema to be carried down the flow.  Setup alerts that control warnings or pausing a stream flow.",
+					"IncomingConnectionLimit": 1,
+					"IncomingConnectionTypes": [
+						"data-stream",
+						"device-stream"
+					],
+					"Name": "Data Map",
+					"OutgoingConnectionLimit": -1,
+					"OutgoingConnectionTypes": [
+						"cold-storage",
+						"warm-storage",
+						"hot-storage"
+					]
+				}
+			],
+			"Displays": [
+				{
+					"ModuleType": "data-stream",
+					"Category": "Data Sources",
+					"Element": "data-stream",
+					"Height": 200,
+					"Icon": {
+						"Icon": "settings_input_antenna"
+					},
+					"Width": 200,
+					"Shape": "Rectangle"
+				},
+				{
+					"ModuleType": "device-stream",
+					"Category": "Data Sources",
+					"Element": "device-stream",
+					"Height": 200,
+					"Icon": {
+						"Icon": "wifi_tethering"
+					},
+					"Width": 200,
+					"Shape": "Rectangle"
+				},
+				{
+					"ModuleType": "cold-storage",
+					"Category": "Storage",
+					"Element": "cold-storage",
+					"Height": 200,
+					"Icon": {
+						"Icon": "assessment"
+					},
+					"Width": 200,
+					"Shape": "Ellipse"
+				},
+				{
+					"ModuleType": "warm-storage",
+					"Category": "Storage",
+					"Element": "warm-storage",
+					"Height": 200,
+					"Icon": {
+						"Icon": "assessment"
+					},
+					"Width": 200,
+					"Shape": "Ellipse"
+				},
+				{
+					"ModuleType": "hot-storage",
+					"Category": "Storage",
+					"Element": "hot-storage",
+					"Height": 200,
+					"Icon": {
+						"Icon": "dashboard"
+					},
+					"Width": 200,
+					"Shape": "Ellipse"
+				},
+				{
+					"ModuleType": "data-map",
+					"Category": "Translation",
+					"Element": "data-map",
+					"Height": 200,
+					"Icon": {
+						"Icon": "call_merge"
+					},
+					"Width": 200,
+					"Shape": "Custom"
+				}
+			]
+		},
+		"dependencies": {}
+	}
 }
