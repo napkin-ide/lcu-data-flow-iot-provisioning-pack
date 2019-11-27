@@ -2,7 +2,7 @@ import { Component, OnInit, Injector } from '@angular/core';
 import { LCUElementContext, LcuElementComponent } from '@lcu/common';
 
 export class LcuDataFlowIotProvisioningPackDataStreamElementState {
-  public SomeProperty: string;
+  public SomeProperty?: string;
 }
 
 export class LcuDataFlowIotProvisioningPackDataStreamContext extends LCUElementContext<
@@ -32,6 +32,10 @@ export class LcuDataFlowIotProvisioningPackDataStreamElementComponent
   //  Life Cycle
   public ngOnInit() {
     super.ngOnInit();
+
+    if (!this.context.State) {
+      this.context.State = {};
+    }
   }
 
   //  API Methods
