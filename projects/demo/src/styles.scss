@@ -53,7 +53,7 @@
    .arctic-theme {
     @include set-theme($arctic-theme);
     .primary-logo {
-      background-image: url($fathym-full-ice-logo);
+      // background-image: url($fathym-full-ice-logo);
       // @include primary-logo($fathym-full-ice-logo, 150px);
     }
    }
@@ -61,42 +61,42 @@
    .contrast-theme {
     @include set-theme($contrast-theme);
     .primary-logo {
-		  background-image: url($fathym-full-contrast-logo);
+		  // background-image: url($fathym-full-contrast-logo);
     }
    }
 
    .cool-candy-theme {
     @include set-theme($cool-candy-theme);
     .primary-logo {
-		  background-image: url($fathym-full-arctic-logo);
+		  // background-image: url($fathym-full-arctic-logo);
     }
    }
 
    .flipper-theme {
     @include set-theme($flipper-theme);
     .primary-logo {
-		  background-image: url($fathym-full-ice-logo);
+		  // background-image: url($fathym-full-ice-logo);
     }
    }
 
    .ice-theme {
     @include set-theme($ice-theme);
     .primary-logo {
-		  background-image: url($fathym-full-flipper-logo);
+		  // background-image: url($fathym-full-flipper-logo);
     }
    }
 
    .sea-green-theme {
     @include set-theme($sea-green-theme);
     .primary-logo {
-		  background-image: url($fathym-full-cool-candy-logo);
+		  // background-image: url($fathym-full-cool-candy-logo);
     }
    }
 
    .white-mint-theme {
     @include set-theme($white-mint-theme);
     .primary-logo {
-		  background-image: url($fathym-full-flipper-logo);
+		  // background-image: url($fathym-full-flipper-logo);
     }
    }
 
