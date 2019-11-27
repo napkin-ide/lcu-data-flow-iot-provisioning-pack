@@ -1,18 +1,25 @@
 import { Component, OnInit, Injector } from '@angular/core';
 import { LCUElementContext, LcuElementComponent } from '@lcu/common';
 
-export class LcuDataFlowIotProvisioningPackDataStreamElementState {}
+export class LcuDataFlowIotProvisioningPackDataStreamElementState {
+  public SomeProperty: string;
+}
 
-export class LcuDataFlowIotProvisioningPackDataStreamContext extends LCUElementContext<LcuDataFlowIotProvisioningPackDataStreamElementState> {}
+export class LcuDataFlowIotProvisioningPackDataStreamContext extends LCUElementContext<
+  LcuDataFlowIotProvisioningPackDataStreamElementState
+> {}
 
-export const SelectorLcuDataFlowIotProvisioningPackDataStreamElement = 'lcu-data-flow-iot-provisioning-pack-data-stream-element';
+export const SelectorLcuDataFlowIotProvisioningPackDataStreamElement =
+  'lcu-data-flow-iot-provisioning-pack-data-stream-element';
 
 @Component({
   selector: SelectorLcuDataFlowIotProvisioningPackDataStreamElement,
   templateUrl: './data-stream.component.html',
   styleUrls: ['./data-stream.component.scss']
 })
-export class LcuDataFlowIotProvisioningPackDataStreamElementComponent extends LcuElementComponent<LcuDataFlowIotProvisioningPackDataStreamContext> implements OnInit {
+export class LcuDataFlowIotProvisioningPackDataStreamElementComponent
+  extends LcuElementComponent<LcuDataFlowIotProvisioningPackDataStreamContext>
+  implements OnInit {
   //  Fields
 
   //  Properties
@@ -28,6 +35,9 @@ export class LcuDataFlowIotProvisioningPackDataStreamElementComponent extends Lc
   }
 
   //  API Methods
+  public Update() {
+    this.context.State.SomeProperty = new Date().toString();
+  }
 
   //  Helpers
 }
