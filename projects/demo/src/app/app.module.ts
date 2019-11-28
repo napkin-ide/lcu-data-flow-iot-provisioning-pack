@@ -26,6 +26,7 @@ import { LoggedInUserComponent } from './controls/logged-in-user/logged-in-user.
 import { DashboardAdminComponent } from './controls/dashboard-admin/dashboard-admin.component';
 import { DashboardNonAdminComponent } from './controls/dashboard-non-admin/dashboard-non-admin.component';
 import { UserHasRoleDirective } from './directives/user-has-role.directive';
+import { LcuDataFlowIotProvisioningPackModule } from '@napkin-ide/lcu-data-flow-iot-provisioning-pack-common';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { UserHasRoleDirective } from './directives/user-has-role.directive';
     FathymSharedModule,
     MaterialModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    LcuDataFlowIotProvisioningPackModule
   ],
   providers: [
     UsersService,

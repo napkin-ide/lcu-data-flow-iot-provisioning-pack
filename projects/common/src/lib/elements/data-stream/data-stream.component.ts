@@ -1,5 +1,5 @@
-import { Component, OnInit, Injector } from '@angular/core';
-import { LCUElementContext, LcuElementComponent } from '@lcu/common';
+import { Component, OnInit, Injector } from "@angular/core";
+import { LCUElementContext, LcuElementComponent } from "@lcu/common";
 
 export class LcuDataFlowIotProvisioningPackDataStreamElementState {
   public SomeProperty?: string;
@@ -10,12 +10,12 @@ export class LcuDataFlowIotProvisioningPackDataStreamContext extends LCUElementC
 > {}
 
 export const SelectorLcuDataFlowIotProvisioningPackDataStreamElement =
-  'lcu-data-flow-iot-provisioning-pack-data-stream-element';
+  "lcu-data-flow-iot-provisioning-pack-data-stream-element";
 
 @Component({
   selector: SelectorLcuDataFlowIotProvisioningPackDataStreamElement,
-  templateUrl: './data-stream.component.html',
-  styleUrls: ['./data-stream.component.scss']
+  templateUrl: "./data-stream.component.html",
+  styleUrls: ["./data-stream.component.scss"]
 })
 export class LcuDataFlowIotProvisioningPackDataStreamElementComponent
   extends LcuElementComponent<LcuDataFlowIotProvisioningPackDataStreamContext>
@@ -33,9 +33,11 @@ export class LcuDataFlowIotProvisioningPackDataStreamElementComponent
   public ngOnInit() {
     super.ngOnInit();
 
-    if (!this.context.State) {
-      this.context.State = {};
-    }
+    // if (this.context) {
+    //   if (!this.context.State) {
+    //     this.context.State = {};
+    //   }
+    // }
   }
 
   //  API Methods
