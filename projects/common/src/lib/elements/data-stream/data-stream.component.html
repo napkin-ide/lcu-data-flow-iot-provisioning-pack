@@ -1,7 +1,39 @@
 <div *ngIf="context && context.State">
-  <h2>LcuDataFlowIotProvisioningPack DataStream Next Steps</h2>
+  <div *ngIf="context && context.State">
+    <mat-tab-group>
+      <mat-tab label="Overview">
+          <canvas *ngIf="context?.State?.Chart"
+            baseChart
+            chartType="line"
+            [legend]="false"
+            [options]="context.State.Chart.Options"
+            [labels]="context.State.Chart.Labels"
+            [colors]="context.State.Chart.Colors"
+            [datasets]="context.State.Chart.Results"
+          ></canvas>
+      </mat-tab>
 
-  <p>{{ context.State.SomeProperty }}</p>
+      <mat-tab label="Access">
+        <mat-card class="spread">
+          <mat-card-header>
+            <mat-card-title>API Keys</mat-card-title>
+          </mat-card-header>
+        </mat-card>
 
-  <a mat-raised-button (click)="Update()">Update</a>
+        <mat-card class="spread">
+          <mat-card-header>
+            <mat-card-title>Language Examples</mat-card-title>
+          </mat-card-header>
+        </mat-card>
+      </mat-tab>
+
+      <mat-tab label="Testing">
+        <h2>LcuDataFlowIotProvisioningPack DataStream Next Steps</h2>
+<!--
+        <p>{{ context.State.SomeProperty }}</p>
+
+        <a mat-raised-button (click)="Update()">Update</a> -->
+      </mat-tab>
+    </mat-tab-group>
+  </div>
 </div>

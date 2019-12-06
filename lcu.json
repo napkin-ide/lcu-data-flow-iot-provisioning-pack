@@ -9,21 +9,6 @@
 			"wc/lcu-data-flow-iot-provisioning-pack.lcu.js"
 		],
 		"solutions": {
-			"device-stream-manager": {
-				"element": "lcu-data-flow-iot-provisioning-pack-device-stream-element"
-			},
-			"cold-storage-manager": {
-				"element": "lcu-data-flow-iot-provisioning-pack-cold-storage-element"
-			},
-			"warm-storage-manager": {
-				"element": "lcu-data-flow-iot-provisioning-pack-warm-storage-element"
-			},
-			"data-map-manager": {
-				"element": "lcu-data-flow-iot-provisioning-pack-data-map-element"
-			},
-			"hot-storage-manager": {
-				"element": "lcu-data-flow-iot-provisioning-pack-hot-storage-element"
-			}
 		},
 		"elements": {},
 		"data-flows": {
