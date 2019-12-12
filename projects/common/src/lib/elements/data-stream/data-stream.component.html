@@ -54,6 +54,10 @@
           <h3>Connecting with Python</h3>
 
           <p>endpoint and example connection info...</p>
+
+          <button mat-raised-button>
+            More Connection Details
+          </button>
         </mat-card-content>
       </mat-card>
     </mat-tab>
@@ -65,11 +69,18 @@
         </mat-list-item>
 
         <mat-list-item
-          *ngIf="!context.State.ActivityLogs || context.State.ActivityLogs.length == 0"
+          *ngIf="
+            !context.State.ActivityLogs ||
+            context.State.ActivityLogs.length == 0
+          "
         >
           <p>There are currently no activity logs to view.</p>
 
-          <button mat-raised-button color="accent" (click)="EnableActivityLogs()">
+          <button
+            mat-raised-button
+            color="accent"
+            (click)="EnableActivityLogs()"
+          >
             Enable Activity Logging
           </button>
         </mat-list-item>

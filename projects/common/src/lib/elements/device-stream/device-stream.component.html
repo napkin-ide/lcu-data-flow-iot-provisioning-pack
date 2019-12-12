@@ -13,7 +13,7 @@
       ></canvas>
     </mat-tab>
 
-    <mat-tab label="Access">
+    <mat-tab label="Devices">
       <mat-card class="spread">
         <mat-card-header>
           <mat-card-title>Devices</mat-card-title>
@@ -22,7 +22,6 @@
         <mat-card-content>
           <mat-list>
             <mat-list-item *ngFor="let device of context.State.Devices">
-
             </mat-list-item>
 
             <mat-list-item>
@@ -36,7 +35,7 @@
 
       <mat-card class="spread">
         <mat-card-header>
-          <mat-card-title>Connecting to your Data Stream</mat-card-title>
+          <mat-card-title>Connecting to your Device Stream</mat-card-title>
         </mat-card-header>
 
         <mat-card-content>
@@ -47,6 +46,10 @@
           <h3>Connecting with Python</h3>
 
           <p>endpoint and example connection info...</p>
+
+          <button mat-raised-button>
+            More Connection Details
+          </button>
         </mat-card-content>
       </mat-card>
     </mat-tab>

@@ -1,22 +1,23 @@
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { NgModule } from "@angular/core";
-import { FlexLayoutModule } from "@angular/flex-layout";
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { environment } from "../environments/environment";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgModule } from '@angular/core';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { environment } from '../environments/environment';
 
-import { AppRoutingModule } from "./app-routing.module";
-import { AppComponent } from "./app.component";
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
 
 import {
   FathymSharedModule,
   MaterialModule,
   LCUServiceSettings
-} from "@lcu/common";
-import { HomeComponent } from "./controls/home/home.component";
-import { LcuDataFlowIotProvisioningPackModule } from "@napkin-ide/lcu-data-flow-iot-provisioning-pack-common";
+} from '@lcu/common';
+import { LcuDataFlowIotProvisioningPackModule } from '@napkin-ide/lcu-data-flow-iot-provisioning-pack-common';
+import { DeviceStreamComponent } from './controls/device-stream/device-stream.component';
+import { DataStreamComponent } from './controls/data-stream/data-stream.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent],
+  declarations: [AppComponent, DataStreamComponent, DeviceStreamComponent],
   imports: [
     BrowserAnimationsModule,
     AppRoutingModule,
@@ -34,9 +35,7 @@ import { LcuDataFlowIotProvisioningPackModule } from "@napkin-ide/lcu-data-flow-
     }
   ],
   bootstrap: [AppComponent],
-  exports: [
-  ],
-  entryComponents: [
-  ]
+  exports: [],
+  entryComponents: []
 })
 export class AppModule {}
