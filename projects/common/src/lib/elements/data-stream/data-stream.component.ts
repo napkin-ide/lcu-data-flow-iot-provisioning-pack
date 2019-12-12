@@ -4,20 +4,14 @@ import {
   LcuElementComponent,
   DataFlowModule
 } from '@lcu/common';
-import { Color, Label } from 'ng2-charts';
-import { ChartOptions } from 'chart.js';
+import { LCUChart } from '../../models/chart';
 
 export class LcuDataFlowIotProvisioningPackDataStreamElementState {
   public ActivityLogs?: string[];
 
-  public APIKeys?: { [name: string]: string };
+  public APIKeys?: { Name: string, Value: string }[];
 
-  public Chart: {
-    Results: any[];
-    Colors: Color[];
-    Labels: Label[];
-    Options: ChartOptions & { annotation: any };
-  };
+  public Chart: LCUChart;
 }
 
 export class LcuDataFlowIotProvisioningPackDataStreamContext extends LCUElementContext<

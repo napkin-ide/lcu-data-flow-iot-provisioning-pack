@@ -1,3 +1,79 @@
-<h2>LcuDataFlowIotProvisioningPack DeviceStream Next Steps</h2>
+<ng-container *ngIf="context && context.State">
+  <mat-tab-group>
+    <mat-tab label="Overview">
+      <canvas
+        *ngIf="context.State.Chart"
+        baseChart
+        chartType="line"
+        [legend]="false"
+        [options]="context.State.Chart.Options"
+        [labels]="context.State.Chart.Labels"
+        [colors]="context.State.Chart.Colors"
+        [datasets]="context.State.Chart.Results"
+      ></canvas>
+    </mat-tab>
 
-<p>Do stuff and things!</p>
+    <mat-tab label="Access">
+      <mat-card class="spread">
+        <mat-card-header>
+          <mat-card-title>Devices</mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+          <mat-list>
+            <mat-list-item *ngFor="let device of context.State.Devices">
+
+            </mat-list-item>
+
+            <mat-list-item>
+              <button mat-raised-button color="accent" (click)="AddDevice()">
+                Add Device
+              </button>
+            </mat-list-item>
+          </mat-list>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="spread">
+        <mat-card-header>
+          <mat-card-title>Connecting to your Data Stream</mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+          <h3>Connecting with .NET Core</h3>
+
+          <p>endpoint and example connection info...</p>
+
+          <h3>Connecting with Python</h3>
+
+          <p>endpoint and example connection info...</p>
+        </mat-card-content>
+      </mat-card>
+    </mat-tab>
+
+    <mat-tab label="Activity Log">
+      <mat-list>
+        <mat-list-item *ngFor="let actLog of context.State.ActivityLogs">
+          {{ actLog }}
+        </mat-list-item>
+
+        <mat-list-item
+          *ngIf="
+            !context.State.ActivityLogs ||
+            context.State.ActivityLogs.length == 0
+          "
+        >
+          <p>There are currently no activity logs to view.</p>
+
+          <button
+            mat-raised-button
+            color="accent"
+            (click)="EnableActivityLogs()"
+          >
+            Enable Activity Logging
+          </button>
+        </mat-list-item>
+      </mat-list>
+    </mat-tab>
+  </mat-tab-group>
+</ng-container>

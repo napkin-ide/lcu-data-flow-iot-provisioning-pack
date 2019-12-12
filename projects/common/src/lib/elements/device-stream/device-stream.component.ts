@@ -1,18 +1,30 @@
 import { Component, OnInit, Injector } from '@angular/core';
 import { LCUElementContext, LcuElementComponent } from '@lcu/common';
+import { LCUChart } from '../../models/chart';
 
-export class LcuDataFlowIotProvisioningPackDeviceStreamElementState {}
+export class LcuDataFlowIotProvisioningPackDeviceStreamElementState {
+  public ActivityLogs?: string[];
 
-export class LcuDataFlowIotProvisioningPackDeviceStreamContext extends LCUElementContext<LcuDataFlowIotProvisioningPackDeviceStreamElementState> {}
+  public Devices?: any[];
 
-export const SelectorLcuDataFlowIotProvisioningPackDeviceStreamElement = 'lcu-data-flow-iot-provisioning-pack-device-stream-element';
+  public Chart: LCUChart;
+}
+
+export class LcuDataFlowIotProvisioningPackDeviceStreamContext extends LCUElementContext<
+  LcuDataFlowIotProvisioningPackDeviceStreamElementState
+> {}
+
+export const SelectorLcuDataFlowIotProvisioningPackDeviceStreamElement =
+  'lcu-data-flow-iot-provisioning-pack-device-stream-element';
 
 @Component({
   selector: SelectorLcuDataFlowIotProvisioningPackDeviceStreamElement,
   templateUrl: './device-stream.component.html',
   styleUrls: ['./device-stream.component.scss']
 })
-export class LcuDataFlowIotProvisioningPackDeviceStreamElementComponent extends LcuElementComponent<LcuDataFlowIotProvisioningPackDeviceStreamContext> implements OnInit {
+export class LcuDataFlowIotProvisioningPackDeviceStreamElementComponent
+  extends LcuElementComponent<LcuDataFlowIotProvisioningPackDeviceStreamContext>
+  implements OnInit {
   //  Fields
 
   //  Properties
@@ -28,6 +40,13 @@ export class LcuDataFlowIotProvisioningPackDeviceStreamElementComponent extends 
   }
 
   //  API Methods
+  public AddDevice() {
+    alert('Adding Device');
+  }
+
+  public EnableActivityLogs() {
+    alert('Enabling Activity Logs');
+  }
 
   //  Helpers
 }

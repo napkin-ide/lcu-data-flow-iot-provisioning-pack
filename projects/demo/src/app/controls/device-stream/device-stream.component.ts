@@ -1,11 +1,15 @@
 import { Component, OnInit, Input } from '@angular/core';
+import {
+  LcuDataFlowIotProvisioningPackDeviceStreamElementState,
+  LcuDataFlowIotProvisioningPackDataStreamElementState
+} from '@napkin-ide/lcu-data-flow-iot-provisioning-pack-common';
 
 @Component({
-  selector: 'lcu-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'lcu-device-stream',
+  templateUrl: './device-stream.component.html',
+  styleUrls: ['./device-stream.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class DeviceStreamComponent implements OnInit {
   /**
    * Input property for background image
    */
@@ -13,22 +17,13 @@ export class HomeComponent implements OnInit {
   @Input('background-image')
   public BackgroundImage: string;
 
-  public TestState: any;
+  public DeviceStreamState: LcuDataFlowIotProvisioningPackDeviceStreamElementState;
 
   constructor() {}
 
   ngOnInit() {
-    this.TestState = {
-      APIKeys: [
-        {
-          Name: 'Primary',
-          Value: '{test_api_key}'
-        },
-        {
-          Name: 'Secondary',
-          Value: '{test_api_key}'
-        }
-      ],
+    this.DeviceStreamState = {
+      Devices: [],
       Chart: {
         Results: [
           { data: [10, 8, 12, 14, 9, 10, 1], label: 'Success' },
@@ -54,15 +49,7 @@ export class HomeComponent implements OnInit {
             pointHoverBorderColor: 'rgba(148,159,177,0.8)'
           }
         ],
-        Labels: [
-          '1pm',
-          '2pm',
-          '3pm',
-          '4pm',
-          '5pm',
-          '6pm',
-          '7pm'
-        ],
+        Labels: ['1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'],
         Options: {
           maintainAspectRatio: false,
           responsive: true,
@@ -94,7 +81,21 @@ export class HomeComponent implements OnInit {
             ]
           }
         }
-      }
+      },
+      ActivityLogs: [
+        'Activity 1',
+        'Activity 2',
+        'Activity 3',
+        'Activity 1',
+        'Activity 2',
+        'Activity 3',
+        'Activity 1',
+        'Activity 2',
+        'Activity 3',
+        'Activity 1',
+        'Activity 2',
+        'Activity 3'
+      ]
     };
   }
 }

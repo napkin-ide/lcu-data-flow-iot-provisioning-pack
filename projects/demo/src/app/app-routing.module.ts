@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './controls/home/home.component';
+import { DataStreamComponent } from './controls/data-stream/data-stream.component';
+import { DeviceStreamComponent } from './controls/device-stream/device-stream.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full'},
-  { path: 'home', component: HomeComponent},
-  { path: 'home/:param', component: HomeComponent}
+  { path: 'data-stream', component: DataStreamComponent},
+  { path: 'device-stream', component: DeviceStreamComponent},
+  { path: '', redirectTo: 'data-stream', pathMatch: 'full'},
 ];
 
 @NgModule({
