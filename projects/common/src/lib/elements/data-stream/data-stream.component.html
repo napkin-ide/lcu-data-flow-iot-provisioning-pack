@@ -1,39 +1,79 @@
-<div *ngIf="context && context.State">
-  <div *ngIf="context && context.State">
-    <mat-tab-group>
-      <mat-tab label="Overview">
-          <canvas *ngIf="context?.State?.Chart"
-            baseChart
-            chartType="line"
-            [legend]="false"
-            [options]="context.State.Chart.Options"
-            [labels]="context.State.Chart.Labels"
-            [colors]="context.State.Chart.Colors"
-            [datasets]="context.State.Chart.Results"
-          ></canvas>
-      </mat-tab>
+<ng-container *ngIf="context && context.State">
+  <mat-tab-group>
+    <mat-tab label="Overview">
+      <canvas
+        *ngIf="context.State.Chart"
+        baseChart
+        chartType="line"
+        [legend]="false"
+        [options]="context.State.Chart.Options"
+        [labels]="context.State.Chart.Labels"
+        [colors]="context.State.Chart.Colors"
+        [datasets]="context.State.Chart.Results"
+      ></canvas>
+    </mat-tab>
 
-      <mat-tab label="Access">
-        <mat-card class="spread">
-          <mat-card-header>
-            <mat-card-title>API Keys</mat-card-title>
-          </mat-card-header>
-        </mat-card>
+    <mat-tab label="Access">
+      <mat-card class="spread">
+        <mat-card-header>
+          <mat-card-title>API Keys</mat-card-title>
+        </mat-card-header>
 
-        <mat-card class="spread">
-          <mat-card-header>
-            <mat-card-title>Language Examples</mat-card-title>
-          </mat-card-header>
-        </mat-card>
-      </mat-tab>
+        <mat-card-content>
+          <mat-list>
+            <mat-list-item *ngFor="let apiKey of context.State.APIKeys">
+              <mat-form-field>
+                <input
+                  matInput
+                  disabled
+                  [placeholder]="apiKey.Name"
+                  [value]="apiKey.Value"
+                />
+              </mat-form-field>
+            </mat-list-item>
 
-      <mat-tab label="Testing">
-        <h2>LcuDataFlowIotProvisioningPack DataStream Next Steps</h2>
-<!--
-        <p>{{ context.State.SomeProperty }}</p>
+            <mat-list-item>
+              <button mat-raised-button color="accent" (click)="AddAPIKey()">
+                Add API Key
+              </button>
+            </mat-list-item>
+          </mat-list>
+        </mat-card-content>
+      </mat-card>
 
-        <a mat-raised-button (click)="Update()">Update</a> -->
-      </mat-tab>
-    </mat-tab-group>
-  </div>
-</div>
+      <mat-card class="spread">
+        <mat-card-header>
+          <mat-card-title>Connecting to your Data Stream</mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+          <h3>Connecting with .NET Core</h3>
+
+          <p>{endpoint} and example connection info...</p>
+
+          <h3>Connecting with Python</h3>
+
+          <p>{endpoint} and example connection info...</p>
+        </mat-card-content>
+      </mat-card>
+    </mat-tab>
+
+    <mat-tab label="Activity Log">
+      <mat-list>
+        <mat-list-item *ngFor="let actLog of context.State.ActivityLogs">
+          {{ actLog }}
+        </mat-list-item>
+
+        <mat-list-item
+          *ngIf="!context.State.ActivityLogs || context.State.ActivityLogs.length == 0"
+        >
+          <p>There are currently no activity logs to view.</p>
+
+          <button mat-raised-button color="accent" (click)="EnableActivityLogs()">
+            Enable Activity Logging
+          </button>
+        </mat-list-item>
+      </mat-list>
+    </mat-tab>
+  </mat-tab-group>
+</ng-container>

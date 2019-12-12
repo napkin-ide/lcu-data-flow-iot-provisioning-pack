@@ -8,6 +8,8 @@ import { Color, Label } from 'ng2-charts';
 import { ChartOptions } from 'chart.js';
 
 export class LcuDataFlowIotProvisioningPackDataStreamElementState {
+  public ActivityLogs?: string[];
+
   public APIKeys?: { [name: string]: string };
 
   public Chart: {
@@ -50,7 +52,13 @@ export class LcuDataFlowIotProvisioningPackDataStreamElementComponent
   }
 
   //  API Methods
-  public Update() {}
+  public AddAPIKey() {
+    alert('Adding API Key');
+  }
+
+  public EnableActivityLogs() {
+    alert('Enabling Activity Logs');
+  }
 
   //  Helpers
 }

@@ -1,16 +1,3 @@
-<div
-   fxLayout="row"
-   fxLayout.xs="column"
-   fxFlexFill
-   fxLayoutAlign="center center">
-   <div
-      fxLayout="column"
-      fxLayoutGap="10px"
-      fxLayoutAlign="center center">
-      <strong class="mat-display-4 title">If you can Fathym It</strong>
-      <strong class="mat-display-2 tagline">you can build it</strong>
-   </div>
-
-   <lcu-data-flow-iot-provisioning-pack-data-stream-element [context]="{State: {}}"></lcu-data-flow-iot-provisioning-pack-data-stream-element>
-</div>
-
+<lcu-data-flow-iot-provisioning-pack-data-stream-element
+  [context]="{ State: TestState }"
+></lcu-data-flow-iot-provisioning-pack-data-stream-element>
