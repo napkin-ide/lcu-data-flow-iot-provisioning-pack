@@ -9,12 +9,6 @@
 			"wc/lcu-data-flow-iot-provisioning-pack.lcu.js"
 		],
 		"solutions": {
-			"data-emulator-manager": {
-				"element": "lcu-data-flow-iot-provisioning-pack-data-emulator-element"
-			},
-			"test-manager": {
-				"element": "lcu-data-flow-iot-provisioning-pack-test-element"
-			}
 		},
 		"elements": {},
 		"data-flows": {
@@ -30,7 +24,7 @@
 					"Description": "Emulate data Fathym for analysis and optimization.",
 					"IncomingConnectionLimit": 0,
 					"IncomingConnectionTypes": [],
-					"Name": "Data Stream",
+					"Name": "Data Emulator",
 					"OutgoingConnectionLimit": 1,
 					"OutgoingConnectionTypes": [
 						"data-stream"
