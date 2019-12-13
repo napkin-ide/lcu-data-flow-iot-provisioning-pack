@@ -16,7 +16,9 @@ import {
   SelectorLcuDataFlowIotProvisioningPackWarmStorageElement,
   LcuDataFlowIotProvisioningPackWarmStorageElementComponent,
   LcuDataFlowIotProvisioningPackDataMapElementComponent,
-  SelectorLcuDataFlowIotProvisioningPackDataMapElement
+  SelectorLcuDataFlowIotProvisioningPackDataMapElement,
+  LcuDataFlowIotProvisioningPackDataEmulatorElementComponent,
+  SelectorLcuDataFlowIotProvisioningPackDataEmulatorElement
 } from '@napkin-ide/lcu-data-flow-iot-provisioning-pack-common';
 
 @NgModule({
@@ -36,6 +38,16 @@ export class AppModule implements DoBootstrap {
 
   //  Life Cycle
   public ngDoBootstrap() {
+    const deMgr = createCustomElement(
+      LcuDataFlowIotProvisioningPackDataEmulatorElementComponent,
+      { injector: this.injector }
+    );
+
+    customElements.define(
+      SelectorLcuDataFlowIotProvisioningPackDataEmulatorElement,
+      deMgr
+    );
+
     const dsMgr = createCustomElement(
       LcuDataFlowIotProvisioningPackDataStreamElementComponent,
       { injector: this.injector }

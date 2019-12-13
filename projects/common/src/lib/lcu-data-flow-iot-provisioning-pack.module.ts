@@ -10,6 +10,7 @@ import { FathymSharedModule, MaterialModule } from '@lcu/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ChartsModule } from 'ng2-charts';
+import { LcuDataFlowIotProvisioningPackDataEmulatorElementComponent } from './elements/data-emulator/data-emulator.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ChartsModule } from 'ng2-charts';
     LcuDataFlowIotProvisioningPackColdStorageElementComponent,
     LcuDataFlowIotProvisioningPackWarmStorageElementComponent,
     LcuDataFlowIotProvisioningPackDataMapElementComponent,
-    LcuDataFlowIotProvisioningPackHotStorageElementComponent
+    LcuDataFlowIotProvisioningPackHotStorageElementComponent,
+    LcuDataFlowIotProvisioningPackDataEmulatorElementComponent
   ],
   entryComponents: [
     LcuDataFlowIotProvisioningPackDataStreamElementComponent,
@@ -26,7 +28,8 @@ import { ChartsModule } from 'ng2-charts';
     LcuDataFlowIotProvisioningPackColdStorageElementComponent,
     LcuDataFlowIotProvisioningPackWarmStorageElementComponent,
     LcuDataFlowIotProvisioningPackDataMapElementComponent,
-    LcuDataFlowIotProvisioningPackHotStorageElementComponent
+    LcuDataFlowIotProvisioningPackHotStorageElementComponent,
+    LcuDataFlowIotProvisioningPackDataEmulatorElementComponent
   ],
   exports: [
     LcuDataFlowIotProvisioningPackDataStreamElementComponent,
@@ -34,7 +37,8 @@ import { ChartsModule } from 'ng2-charts';
     LcuDataFlowIotProvisioningPackColdStorageElementComponent,
     LcuDataFlowIotProvisioningPackWarmStorageElementComponent,
     LcuDataFlowIotProvisioningPackDataMapElementComponent,
-    LcuDataFlowIotProvisioningPackHotStorageElementComponent
+    LcuDataFlowIotProvisioningPackHotStorageElementComponent,
+    LcuDataFlowIotProvisioningPackDataEmulatorElementComponent
   ],
   imports: [
     FathymSharedModule,
