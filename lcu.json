@@ -67,6 +67,18 @@
 					"OutgoingConnectionTypes": []
 				},
 				{
+					"ModuleType": "warm-query",
+					"ControlType": "Gate",
+					"Description": "Query Warm Storage assets.",
+					"IncomingConnectionLimit": 1,
+					"IncomingConnectionTypes": [
+						"warm-storage"
+					],
+					"Name": "Warm Query",
+					"OutgoingConnectionLimit": 0,
+					"OutgoingConnectionTypes": []
+				},
+				{
 					"ModuleType": "warm-storage",
 					"ControlType": "Gate",
 					"Description": "For highly available datasets requiring querying, aggregation, and massive scale.",

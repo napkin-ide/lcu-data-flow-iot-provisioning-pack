@@ -11,6 +11,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ChartsModule } from 'ng2-charts';
 import { LcuDataFlowIotProvisioningPackDataEmulatorElementComponent } from './elements/data-emulator/data-emulator.component';
+import { LcuDataFlowIotProvisioningPackWarmQueryElementComponent } from './elements/warm-query/warm-query.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { LcuDataFlowIotProvisioningPackDataEmulatorElementComponent } from './el
     LcuDataFlowIotProvisioningPackWarmStorageElementComponent,
     LcuDataFlowIotProvisioningPackDataMapElementComponent,
     LcuDataFlowIotProvisioningPackHotStorageElementComponent,
-    LcuDataFlowIotProvisioningPackDataEmulatorElementComponent
+    LcuDataFlowIotProvisioningPackDataEmulatorElementComponent,
+    LcuDataFlowIotProvisioningPackWarmQueryElementComponent
   ],
   entryComponents: [
     LcuDataFlowIotProvisioningPackDataStreamElementComponent,
@@ -29,7 +31,8 @@ import { LcuDataFlowIotProvisioningPackDataEmulatorElementComponent } from './el
     LcuDataFlowIotProvisioningPackWarmStorageElementComponent,
     LcuDataFlowIotProvisioningPackDataMapElementComponent,
     LcuDataFlowIotProvisioningPackHotStorageElementComponent,
-    LcuDataFlowIotProvisioningPackDataEmulatorElementComponent
+    LcuDataFlowIotProvisioningPackDataEmulatorElementComponent,
+    LcuDataFlowIotProvisioningPackWarmQueryElementComponent
   ],
   exports: [
     LcuDataFlowIotProvisioningPackDataStreamElementComponent,
@@ -38,7 +41,8 @@ import { LcuDataFlowIotProvisioningPackDataEmulatorElementComponent } from './el
     LcuDataFlowIotProvisioningPackWarmStorageElementComponent,
     LcuDataFlowIotProvisioningPackDataMapElementComponent,
     LcuDataFlowIotProvisioningPackHotStorageElementComponent,
-    LcuDataFlowIotProvisioningPackDataEmulatorElementComponent
+    LcuDataFlowIotProvisioningPackDataEmulatorElementComponent,
+    LcuDataFlowIotProvisioningPackWarmQueryElementComponent
   ],
   imports: [
     FathymSharedModule,
