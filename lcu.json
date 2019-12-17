@@ -87,8 +87,10 @@
 						"data-map"
 					],
 					"Name": "Warm Storage",
-					"OutgoingConnectionLimit": 0,
-					"OutgoingConnectionTypes": []
+					"OutgoingConnectionLimit": 1,
+					"OutgoingConnectionTypes": [
+            "warm-storage"
+          ]
 				},
 				{
 					"ModuleType": "hot-storage",
@@ -161,6 +163,17 @@
 					"Height": 200,
 					"Icon": {
 						"Icon": "assessment"
+					},
+					"Width": 200,
+					"Shape": "Ellipse"
+				},
+				{
+					"ModuleType": "warm-query",
+					"Category": "Query",
+					"Element": "warm-query",
+					"Height": 200,
+					"Icon": {
+						"Icon": "search"
 					},
 					"Width": 200,
 					"Shape": "Ellipse"
