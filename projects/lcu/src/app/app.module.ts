@@ -20,6 +20,7 @@ import {
   LcuDataFlowIotProvisioningPackDataEmulatorElementComponent,
   SelectorLcuDataFlowIotProvisioningPackDataEmulatorElement
 } from '@napkin-ide/lcu-data-flow-iot-provisioning-pack-common';
+import { ElementZoneStrategyFactory } from 'elements-zone-strategy';
 
 @NgModule({
   declarations: [],
@@ -48,9 +49,10 @@ export class AppModule implements DoBootstrap {
       deMgr
     );
 
+    const dsFactory = new ElementZoneStrategyFactory(LcuDataFlowIotProvisioningPackDataStreamElementComponent, this.injector);
     const dsMgr = createCustomElement(
       LcuDataFlowIotProvisioningPackDataStreamElementComponent,
-      { injector: this.injector }
+      { injector: this.injector, strategyFactory: dsFactory }
     );
 
     customElements.define(

@@ -55,8 +55,4 @@ export class LcuDataFlowIotProvisioningPackDataStreamElementComponent
   }
 
   //  Helpers
-  public TabChange(event: any): void {
-    console.log('TabChange emitted');
-    console.log('TabChange event: ', event);
-  }
 }
