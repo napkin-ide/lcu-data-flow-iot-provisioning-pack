@@ -19,6 +19,18 @@
 			},
 			"Options": [
 				{
+					"ModuleType": "data-emulator",
+					"ControlType": "Direct",
+					"Description": "Emulate data Fathym for analysis and optimization.",
+					"IncomingConnectionLimit": 0,
+					"IncomingConnectionTypes": [],
+					"Name": "Data Emulator",
+					"OutgoingConnectionLimit": 1,
+					"OutgoingConnectionTypes": [
+						"data-stream"
+					]
+				},
+				{
 					"ModuleType": "data-stream",
 					"ControlType": "Gate",
 					"Description": "Stream your non device data through Fathym for analysis and optimization.",
@@ -55,6 +67,18 @@
 					"OutgoingConnectionTypes": []
 				},
 				{
+					"ModuleType": "warm-query",
+					"ControlType": "Gate",
+					"Description": "Query Warm Storage assets.",
+					"IncomingConnectionLimit": 1,
+					"IncomingConnectionTypes": [
+						"warm-storage"
+					],
+					"Name": "Warm Query",
+					"OutgoingConnectionLimit": 0,
+					"OutgoingConnectionTypes": []
+				},
+				{
 					"ModuleType": "warm-storage",
 					"ControlType": "Gate",
 					"Description": "For highly available datasets requiring querying, aggregation, and massive scale.",
@@ -63,8 +87,10 @@
 						"data-map"
 					],
 					"Name": "Warm Storage",
-					"OutgoingConnectionLimit": 0,
-					"OutgoingConnectionTypes": []
+					"OutgoingConnectionLimit": 1,
+					"OutgoingConnectionTypes": [
+            "warm-storage"
+          ]
 				},
 				{
 					"ModuleType": "hot-storage",
@@ -98,6 +124,17 @@
 			],
 			"Displays": [
 				{
+					"ModuleType": "data-emulator",
+					"Category": "Emulators",
+					"Element": "data-emulator",
+					"Height": 200,
+					"Icon": {
+						"Icon": "input"
+					},
+					"Width": 200,
+					"Shape": "Rectangle"
+				},
+				{
 					"ModuleType": "data-stream",
 					"Category": "Data Sources",
 					"Element": "data-stream",
@@ -126,6 +163,17 @@
 					"Height": 200,
 					"Icon": {
 						"Icon": "assessment"
+					},
+					"Width": 200,
+					"Shape": "Ellipse"
+				},
+				{
+					"ModuleType": "warm-query",
+					"Category": "Query",
+					"Element": "warm-query",
+					"Height": 200,
+					"Icon": {
+						"Icon": "search"
 					},
 					"Width": 200,
 					"Shape": "Ellipse"

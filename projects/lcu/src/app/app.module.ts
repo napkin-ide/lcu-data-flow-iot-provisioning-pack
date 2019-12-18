@@ -16,8 +16,11 @@ import {
   SelectorLcuDataFlowIotProvisioningPackWarmStorageElement,
   LcuDataFlowIotProvisioningPackWarmStorageElementComponent,
   LcuDataFlowIotProvisioningPackDataMapElementComponent,
-  SelectorLcuDataFlowIotProvisioningPackDataMapElement
+  SelectorLcuDataFlowIotProvisioningPackDataMapElement,
+  LcuDataFlowIotProvisioningPackDataEmulatorElementComponent,
+  SelectorLcuDataFlowIotProvisioningPackDataEmulatorElement
 } from '@napkin-ide/lcu-data-flow-iot-provisioning-pack-common';
+import { ElementZoneStrategyFactory } from 'elements-zone-strategy';
 
 @NgModule({
   declarations: [],
@@ -36,9 +39,20 @@ export class AppModule implements DoBootstrap {
 
   //  Life Cycle
   public ngDoBootstrap() {
+    const deMgr = createCustomElement(
+      LcuDataFlowIotProvisioningPackDataEmulatorElementComponent,
+      { injector: this.injector }
+    );
+
+    customElements.define(
+      SelectorLcuDataFlowIotProvisioningPackDataEmulatorElement,
+      deMgr
+    );
+
+    const dsFactory = new ElementZoneStrategyFactory(LcuDataFlowIotProvisioningPackDataStreamElementComponent, this.injector);
     const dsMgr = createCustomElement(
       LcuDataFlowIotProvisioningPackDataStreamElementComponent,
-      { injector: this.injector }
+      { injector: this.injector, strategyFactory: dsFactory }
     );
 
     customElements.define(
