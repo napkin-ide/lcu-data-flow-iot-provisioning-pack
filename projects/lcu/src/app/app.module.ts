@@ -21,7 +21,6 @@ import {
   SelectorLcuDataFlowIotProvisioningPackDataEmulatorElement
 } from '@napkin-ide/lcu-data-flow-iot-provisioning-pack-common';
 import { ElementZoneStrategyFactory } from 'elements-zone-strategy';
-import { ConnectionStringsComponent } from './elements/connection-strings/connection-strings.component';
 
 @NgModule({
   declarations: [ConnectionStringsComponent],
