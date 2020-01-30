@@ -6,5 +6,7 @@ export * from './lib/elements/warm-storage/warm-storage.component';
 export * from './lib/elements/data-map/data-map.component';
 export * from './lib/elements/hot-storage/hot-storage.component';
 export * from './lib/models/chart';
+export * from './lib/models/connection-string.model';
 export * from './lib/elements/data-emulator/data-emulator.component';
 export * from './lib/elements/warm-query/warm-query.component';
+export * from './lib/elements/connection-strings/connection-strings.component';
