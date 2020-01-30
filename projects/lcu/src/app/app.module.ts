@@ -23,7 +23,7 @@ import {
 import { ElementZoneStrategyFactory } from 'elements-zone-strategy';
 
 @NgModule({
-  declarations: [ConnectionStringsComponent],
+  declarations: [],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
