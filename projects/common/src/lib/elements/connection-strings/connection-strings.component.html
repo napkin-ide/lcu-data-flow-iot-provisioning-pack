@@ -20,7 +20,7 @@
                 <span id="connectionKey" name="connectionKey" class="mat-body-strong mat-body-2">{{connection.Key}}: </span>
                 <span id="connectionValue" name="connectionValue" class="mat-small mat-caption">{{connection.Value}}</span>
               </div>
-              <div fxLayoutAlign="end start">
+              <div fxLayoutAlign="end start" *ngIf="ClipboardCopy === true">
                 <button
                   id="copyToClipboardButton"
                   name="copyToClipboardButton"
