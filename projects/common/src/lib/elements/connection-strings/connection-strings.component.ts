@@ -15,13 +15,19 @@ export class ConnectionStringsComponent implements OnInit {
   private _context: LCUElementContext<any>;
   @Input('context')
   public set Context(val: LCUElementContext<any>) {
-    debugger;
     this._context = val;
   }
 
   public get Context(): LCUElementContext<any> {
     return this._context;
   }
+
+  /**
+   * Input property to allow copying to clipboard
+   */
+  // tslint:disable-next-line:no-input-rename
+  @Input('clipboard-copy')
+  public ClipboardCopy: boolean;
 
   /**
    * Array of connections
