@@ -12,6 +12,8 @@ export class LcuDataFlowIotProvisioningPackDataStreamElementState {
   public APIKeys?: { Name: string, Value: string }[];
 
   public Chart: LCUChart;
+
+  public ConnectionStrings: object;
 }
 
 export class LcuDataFlowIotProvisioningPackDataStreamContext extends LCUElementContext<

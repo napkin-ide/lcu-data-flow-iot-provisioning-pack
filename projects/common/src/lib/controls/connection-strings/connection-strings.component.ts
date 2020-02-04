@@ -12,14 +12,15 @@ export class ConnectionStringsComponent implements OnInit {
   /**
    * Input property for context
    */
-  private _context: LCUElementContext<any>;
-  @Input('context')
-  public set Context(val: LCUElementContext<any>) {
-    this._context = val;
+  private _connectionStrings: object;
+  @Input('connection-strings')
+  public set ConnectionStrings(val: object) {
+    this._connectionStrings = val;
+    this.connectionStrings();
   }
 
-  public get Context(): LCUElementContext<any> {
-    return this._context;
+  public get ConnectionStrings(): object {
+    return this._connectionStrings;
   }
 
   /**
@@ -61,12 +62,16 @@ export class ConnectionStringsComponent implements OnInit {
   /**
    * Get and Show connection strings
    */
-  protected connections(): void {
+  protected connectionStrings(): void {
     this.Connections = [];
 
-    Object.entries(this.Context.State.Infrastructure.Connections).forEach((itm: Array<any>) => {
+    Object.entries(this.ConnectionStrings).forEach((itm: Array<any>) => {
       this.Connections.push(new ConnectionStringModel(itm[0], itm[1]));
     });
+
+    // Object.entries(this.Context.State.Infrastructure.Connections).forEach((itm: Array<any>) => {
+    //   this.Connections.push(new ConnectionStringModel(itm[0], itm[1]));
+    // });
   }
 
 }

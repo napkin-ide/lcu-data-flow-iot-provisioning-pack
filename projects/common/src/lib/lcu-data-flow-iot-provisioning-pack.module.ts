@@ -11,7 +11,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ChartsModule } from 'ng2-charts';
 import { LcuDataFlowIotProvisioningPackDataEmulatorElementComponent } from './elements/data-emulator/data-emulator.component';
 import { LcuDataFlowIotProvisioningPackWarmQueryElementComponent } from './elements/warm-query/warm-query.component';
-import { ConnectionStringsComponent } from './elements/connection-strings/connection-strings.component';
+import { ConnectionStringsComponent } from './controls/connection-strings/connection-strings.component';
 
 @NgModule({
   declarations: [
