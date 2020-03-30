@@ -57,7 +57,7 @@ import { ConnectionStringsComponent } from './elements/connection-strings/connec
   ]
 })
 export class LcuDataFlowIotProvisioningPackModule {
-  public static forRoot(): ModuleWithProviders {
+  public static forRoot(): ModuleWithProviders<LcuDataFlowIotProvisioningPackModule> {
     return {
       ngModule: LcuDataFlowIotProvisioningPackModule,
       providers: []
