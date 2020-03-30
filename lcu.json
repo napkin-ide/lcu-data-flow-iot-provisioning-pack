@@ -8,8 +8,7 @@
 		"wc": [
 			"wc/lcu-data-flow-iot-provisioning-pack.lcu.js"
 		],
-		"solutions": {
-		},
+		"solutions": {},
 		"elements": {},
 		"data-flows": {
 			"Pack": {
@@ -89,8 +88,8 @@
 					"Name": "Warm Storage",
 					"OutgoingConnectionLimit": 1,
 					"OutgoingConnectionTypes": [
-            "warm-storage"
-          ]
+						"warm-storage"
+					]
 				},
 				{
 					"ModuleType": "hot-storage",
