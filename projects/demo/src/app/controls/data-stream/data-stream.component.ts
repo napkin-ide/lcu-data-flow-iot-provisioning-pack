@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import {
   LcuDataFlowIotProvisioningPackDataStreamElementState
 } from '@napkin-ide/lcu-data-flow-iot-provisioning-pack-common';
+import { LazyElementConfig } from '@lowcodeunit/lazy-element';
 
 @Component({
   selector: 'lcu-data-stream',
@@ -17,6 +18,8 @@ export class DataStreamComponent implements OnInit {
   public BackgroundImage: string;
 
   public DataStreamState: LcuDataFlowIotProvisioningPackDataStreamElementState;
+
+  public LazyConfig: LazyElementConfig;
 
   constructor() {}
 
@@ -104,6 +107,11 @@ export class DataStreamComponent implements OnInit {
         'Activity 2',
         'Activity 3'
       ]
+    };
+
+    this.LazyConfig = {
+      Assets: ['/assets/wc/lcu-data-flow-iot-provisioning-pack.lcu.js'],
+      ElementName: 'lcu-data-flow-iot-provisioning-pack-data-stream-element'
     };
   }
 }
