@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, HostBinding } from '@angular/core';
 import { LcuDataFlowIotProvisioningPackDataMapElementState } from '@napkin-ide/lcu-data-flow-iot-provisioning-pack-common';
 
 @Component({
@@ -15,6 +15,9 @@ export class DataMapComponent implements OnInit {
   public BackgroundImage: string;
 
   public DataMapState: LcuDataFlowIotProvisioningPackDataMapElementState;
+
+  @HostBinding('class.data-map')
+  public HostTypeClass = true;
 
   constructor() {}
 

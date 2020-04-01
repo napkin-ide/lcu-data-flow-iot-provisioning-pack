@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, HostBinding } from '@angular/core';
 import {
   LcuDataFlowIotProvisioningPackDataStreamElementState
 } from '@napkin-ide/lcu-data-flow-iot-provisioning-pack-common';
@@ -19,7 +19,8 @@ export class DataStreamComponent implements OnInit {
 
   public DataStreamState: LcuDataFlowIotProvisioningPackDataStreamElementState;
 
-  public LazyConfig: LazyElementConfig;
+  @HostBinding('class.data-stream')
+  public HostTypeClass = true;
 
   constructor() {}
 
@@ -107,11 +108,6 @@ export class DataStreamComponent implements OnInit {
         'Activity 2',
         'Activity 3'
       ]
-    };
-
-    this.LazyConfig = {
-      Assets: ['/assets/wc/lcu-data-flow-iot-provisioning-pack.lcu.js'],
-      ElementName: 'lcu-data-flow-iot-provisioning-pack-data-stream-element'
     };
   }
 }

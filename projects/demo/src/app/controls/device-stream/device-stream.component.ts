@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, HostBinding } from '@angular/core';
 import {
   LcuDataFlowIotProvisioningPackDeviceStreamElementState,
   LcuDataFlowIotProvisioningPackDataStreamElementState
@@ -18,6 +18,9 @@ export class DeviceStreamComponent implements OnInit {
   public BackgroundImage: string;
 
   public DeviceStreamState: LcuDataFlowIotProvisioningPackDeviceStreamElementState;
+
+  @HostBinding('class.device-stream')
+  public HostTypeClass = true;
 
   constructor() {}
 
