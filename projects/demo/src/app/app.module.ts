@@ -15,9 +15,10 @@ import {
 import { LcuDataFlowIotProvisioningPackModule } from '@napkin-ide/lcu-data-flow-iot-provisioning-pack-common';
 import { DeviceStreamComponent } from './controls/device-stream/device-stream.component';
 import { DataStreamComponent } from './controls/data-stream/data-stream.component';
+import { DataMapComponent } from './controls/data-map/data-map.component';
 
 @NgModule({
-  declarations: [AppComponent, DataStreamComponent, DeviceStreamComponent],
+  declarations: [AppComponent, DataMapComponent, DataStreamComponent, DeviceStreamComponent],
   imports: [
     BrowserAnimationsModule,
     AppRoutingModule,

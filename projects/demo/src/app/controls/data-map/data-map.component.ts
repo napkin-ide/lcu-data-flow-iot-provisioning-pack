@@ -1,14 +1,12 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {
-  LcuDataFlowIotProvisioningPackDataStreamElementState
-} from '@napkin-ide/lcu-data-flow-iot-provisioning-pack-common';
+import { LcuDataFlowIotProvisioningPackDataMapElementState } from '@napkin-ide/lcu-data-flow-iot-provisioning-pack-common';
 
 @Component({
-  selector: 'lcu-data-stream',
-  templateUrl: './data-stream.component.html',
-  styleUrls: ['./data-stream.component.scss']
+  selector: 'lcu-data-map',
+  templateUrl: './data-map.component.html',
+  styleUrls: ['./data-map.component.scss']
 })
-export class DataStreamComponent implements OnInit {
+export class DataMapComponent implements OnInit {
   /**
    * Input property for background image
    */
@@ -16,22 +14,12 @@ export class DataStreamComponent implements OnInit {
   @Input('background-image')
   public BackgroundImage: string;
 
-  public DataStreamState: LcuDataFlowIotProvisioningPackDataStreamElementState;
+  public DataMapState: LcuDataFlowIotProvisioningPackDataMapElementState;
 
   constructor() {}
 
   ngOnInit() {
-    this.DataStreamState = {
-      APIKeys: [
-        {
-          Name: 'Primary',
-          Value: '{test_api_key}'
-        },
-        {
-          Name: 'Secondary',
-          Value: '{test_api_key}'
-        }
-      ],
+    this.DataMapState = {
       Chart: {
         Results: [
           { data: [10, 8, 12, 14, 9, 10, 1], label: 'Success' },
