@@ -14,7 +14,9 @@
     </mat-card-header>
     <mat-card-content>
         <mat-list *ngFor="let connection of Connections; let i = index; let odd = odd; let even = even">
+          <pre>{{connection | json}}</pre>
           <mat-list-item [ngClass]="{ odd: odd, even: even }" style="height: auto;">
+            
             <div fxFlex fxLayout="row" class="margin-2">
               <div fxFlex="95" fxLayout="column" class="margin-right-3 word-break-all">
                 <span id="connectionKey" name="connectionKey" class="mat-body-strong mat-body-2">{{connection.Key}}: </span>
