@@ -11,6 +11,7 @@ LCUElementContext<LcuDataFlowIotProvisioningPackWarmStorageElementState> {}
 export const SelectorLcuDataFlowIotProvisioningPackWarmStorageElement = 'lcu-data-flow-iot-provisioning-pack-warm-storage-element';
 
 @Component({
+
   selector: SelectorLcuDataFlowIotProvisioningPackWarmStorageElement,
   templateUrl: './warm-storage.component.html',
   styleUrls: ['./warm-storage.component.scss']

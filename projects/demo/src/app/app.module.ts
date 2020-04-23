@@ -15,9 +15,10 @@ import {
 import { LcuDataFlowIotProvisioningPackModule } from '@napkin-ide/lcu-data-flow-iot-provisioning-pack-common';
 import { DeviceStreamComponent } from './controls/device-stream/device-stream.component';
 import { DataStreamComponent } from './controls/data-stream/data-stream.component';
+import { WarmStorageComponent } from './controls/warm-storage/warm-storage.component';
 
 @NgModule({
-  declarations: [AppComponent, DataStreamComponent, DeviceStreamComponent],
+  declarations: [AppComponent, DataStreamComponent, DeviceStreamComponent, WarmStorageComponent],
   imports: [
     BrowserAnimationsModule,
     AppRoutingModule,
@@ -35,7 +36,7 @@ import { DataStreamComponent } from './controls/data-stream/data-stream.componen
     }
   ],
   bootstrap: [AppComponent],
-  exports: [],
-  entryComponents: []
+  exports: [WarmStorageComponent],
+  entryComponents: [WarmStorageComponent]
 })
 export class AppModule {}
