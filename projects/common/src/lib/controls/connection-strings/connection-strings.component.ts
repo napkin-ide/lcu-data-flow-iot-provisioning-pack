@@ -27,8 +27,8 @@ export class ConnectionStringsComponent implements OnInit {
    * Input property to allow copying to clipboard
    */
   // tslint:disable-next-line:no-input-rename
-  @Input('clipboard-copy')
-  public ClipboardCopy: boolean;
+  @Input('copy-to-clipboard')
+  public CopyToClipboard: boolean;
 
   /**
    * Array of connections
@@ -47,7 +47,7 @@ export class ConnectionStringsComponent implements OnInit {
    *
    * @param idx index of selected connection string
    */
-  public CopyToClipboard(idx: number): void {
+  public CopyStringToClipboard(idx: number): void {
     const selBox = document.createElement('textarea');
     const selected = this.Connections[idx] as ConnectionStringModel;
     selBox.value = selected.Value;

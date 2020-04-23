@@ -20,7 +20,7 @@
                 <span id="connectionKey" name="connectionKey" class="mat-body-strong mat-body-2">{{connection.Key}}: </span>
                 <span id="connectionValue" name="connectionValue" class="mat-small mat-caption">{{connection.Value}}</span>
               </div>
-              <div fxLayoutAlign="end start" *ngIf="ClipboardCopy === true">
+              <div fxLayoutAlign="end start" *ngIf="CopyToClipboard === true">
                 <button
                   id="copyToClipboardButton"
                   name="copyToClipboardButton"
@@ -28,7 +28,7 @@
                   mat-button
                   matTooltip="Copy connection string to Clipboard"
                   matTooltipPosition="right"
-                  (click)="CopyToClipboard(i)">
+                  (click)="CopyStringToClipboard(i)">
                   <mat-icon class="rotate-180 clipboard-icon">save_alt</mat-icon>
                 </button>
               </div>

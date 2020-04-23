@@ -1,3 +1,4 @@
+import { InfrastructureModel } from './../../models/infrastructure.model';
 import { Component, OnInit, Injector } from '@angular/core';
 import {
   LCUElementContext,
@@ -14,7 +15,7 @@ export class LcuDataFlowIotProvisioningPackDataStreamElementState {
 
   public Chart: LCUChart;
 
-  public ConnectionStrings: object;
+  public Infrastructure: InfrastructureModel;
 }
 
 export class LcuDataFlowIotProvisioningPackDataStreamContext extends LCUElementContext<

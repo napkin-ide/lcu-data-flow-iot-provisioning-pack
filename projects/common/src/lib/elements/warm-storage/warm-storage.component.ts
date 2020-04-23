@@ -1,8 +1,9 @@
+import { InfrastructureModel } from './../../models/infrastructure.model';
 import { Component, OnInit, Injector } from '@angular/core';
 import { LCUElementContext, LcuElementComponent } from '@lcu/common';
 
 export class LcuDataFlowIotProvisioningPackWarmStorageElementState {
-  public ConnectionStrings: object;
+  public Infrastructure: InfrastructureModel;
 }
 
 export class LcuDataFlowIotProvisioningPackWarmStorageContext extends
