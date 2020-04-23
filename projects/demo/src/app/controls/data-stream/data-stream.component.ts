@@ -109,6 +109,7 @@ export class DataStreamComponent implements OnInit {
       ],
       Infrastructure: {
         Connections: {
+          // tslint:disable-next-line:max-line-length
           'Primary SQL Connection String': 'AccountEndpoint=https://lcu-int.documents.azure.com:443/;AccountKey=Qan4GIhRTovYZmdogrsZnYDR8xiI0RL6gvGa9ufnp3c4RGRit0xAmasqiEOEwqPQs3HoN60w8NyM5E6DbW96yA==;',
           'Secondary SQL Connection String': 'AccountEndpoint=https://lcu-int.documents.azure.com:443/;AccountKey=wBIakKZVZ1f5r4csg5Beu3lYOeoHinMdYtWNVt3gdvQ6jXebdWRALdAC3MHZKv2uEw35hRzM57QoPXGoj8CAcg==;',
           'Primary Read-Only SQL Connection String': 'AccountEndpoint=https://lcu-int.documents.azure.com:443/;AccountKey=6gcv6sCq9k28srWauxeDSBR9Zork7DaWZGcOWU9VdRMzK8WwCtm3gigDMtUzURgkEw0pH0bLoB26joiaYiM72A==;',
