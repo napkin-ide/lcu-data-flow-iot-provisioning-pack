@@ -1,9 +1,12 @@
 import { Component, OnInit, Injector } from '@angular/core';
 import { LCUElementContext, LcuElementComponent } from '@lcu/common';
 
-export class LcuDataFlowIotProvisioningPackWarmStorageElementState {}
+export class LcuDataFlowIotProvisioningPackWarmStorageElementState {
+  public ConnectionStrings: object;
+}
 
-export class LcuDataFlowIotProvisioningPackWarmStorageContext extends LCUElementContext<LcuDataFlowIotProvisioningPackWarmStorageElementState> {}
+export class LcuDataFlowIotProvisioningPackWarmStorageContext extends
+LCUElementContext<LcuDataFlowIotProvisioningPackWarmStorageElementState> {}
 
 export const SelectorLcuDataFlowIotProvisioningPackWarmStorageElement = 'lcu-data-flow-iot-provisioning-pack-warm-storage-element';
 
@@ -12,7 +15,8 @@ export const SelectorLcuDataFlowIotProvisioningPackWarmStorageElement = 'lcu-dat
   templateUrl: './warm-storage.component.html',
   styleUrls: ['./warm-storage.component.scss']
 })
-export class LcuDataFlowIotProvisioningPackWarmStorageElementComponent extends LcuElementComponent<LcuDataFlowIotProvisioningPackWarmStorageContext> implements OnInit {
+export class LcuDataFlowIotProvisioningPackWarmStorageElementComponent extends
+LcuElementComponent<LcuDataFlowIotProvisioningPackWarmStorageContext> implements OnInit {
   //  Fields
 
   //  Properties

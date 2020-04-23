@@ -5,6 +5,7 @@ import {
   DataFlowModule
 } from '@lcu/common';
 import { LCUChart } from '../../models/chart';
+import { ConnectionStringModel } from '../../models/connection-string.model';
 
 export class LcuDataFlowIotProvisioningPackDataStreamElementState {
   public ActivityLogs?: string[];
