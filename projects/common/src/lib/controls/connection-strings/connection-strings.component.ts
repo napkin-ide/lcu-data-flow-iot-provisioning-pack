@@ -77,6 +77,10 @@ export class ConnectionStringsComponent implements OnInit {
   protected connectionStrings(): void {
     this.Connections = [];
 
+    if (!this.ConnectionStrings) {
+      return;
+    }
+
     Object.entries(this.ConnectionStrings).forEach((itm: Array<any>) => {
       this.Connections.push(new ConnectionStringModel(itm[0], itm[1]));
     });
