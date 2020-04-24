@@ -35,8 +35,12 @@
                   <mat-icon color="accent">swap_horizontal_circle</mat-icon>
                   <span id="connectionKey" name="connectionKey" class="mat-h3">{{connection.Key}}: </span>
                 </div>
-                
-                <span id="connectionValue" name="connectionValue" class="mat-small mat-caption">{{connection.Value}}</span>
+                <div 
+                  matTooltip="Copy {{connection.Key}} string to Clipboard"
+                  (click)="CopyStringToClipboard(i)" 
+                  class="alert alert-info">
+                  <span id="connectionValue" name="connectionValue" class="mat-small mat-caption">{{connection.Value}}</span>
+                </div>
               </div>
               <div>
                 <button
