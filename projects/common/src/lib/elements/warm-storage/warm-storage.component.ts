@@ -12,20 +12,27 @@ LCUElementContext<LcuDataFlowIotProvisioningPackWarmStorageElementState> {}
 export const SelectorLcuDataFlowIotProvisioningPackWarmStorageElement = 'lcu-data-flow-iot-provisioning-pack-warm-storage-element';
 
 @Component({
-
   selector: SelectorLcuDataFlowIotProvisioningPackWarmStorageElement,
   templateUrl: './warm-storage.component.html',
   styleUrls: ['./warm-storage.component.scss']
 })
+
 export class LcuDataFlowIotProvisioningPackWarmStorageElementComponent extends
 LcuElementComponent<LcuDataFlowIotProvisioningPackWarmStorageContext> implements OnInit {
   //  Fields
 
   //  Properties
 
+  /**
+   * Connection string title
+   */
+  public Title: string;
+
   //  Constructors
   constructor(protected injector: Injector) {
     super(injector);
+
+    this.Title = 'Warm Storage Connection Strings';
   }
 
   //  Life Cycle

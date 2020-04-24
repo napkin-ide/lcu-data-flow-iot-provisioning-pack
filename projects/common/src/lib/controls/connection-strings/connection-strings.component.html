@@ -1,17 +1,17 @@
 <mat-accordion>
-<mat-expansion-panel expanded="true">
+<mat-expansion-panel (opened)="PanelOpenState = true" (closed)="PanelOpenState = false">
     <mat-expansion-panel-header>
       <mat-panel-title>
         <div fxLayout="row" fxLayoutAlign="start center">
           <mat-icon color="accent" class="margin-right-2">swap_horizontal_circle</mat-icon>
-          Storage Connections
+          {{ Title }}
         </div>
       </mat-panel-title>
     </mat-expansion-panel-header>
   
   <mat-card>
     <mat-card-header>
-        <mat-card-title>Hard Coded Strings</mat-card-title>
+        <!-- <mat-card-title>{{ Title }}</mat-card-title> -->
     </mat-card-header>
     <mat-card-content>
         <mat-list *ngFor="let connection of Connections; let i = index; let odd = odd; let even = even">
@@ -20,7 +20,7 @@
             
             <div fxFlex fxLayout="row" class="margin-2">
               <div fxFlex="95" fxLayout="column" class="margin-right-3 word-break-all">
-                <span id="connectionKey" name="connectionKey" class="mat-body-strong mat-body-2">{{connection.Key}}: </span>
+                <span id="connectionKey" name="connectionKey" class="mat-h3">{{connection.Key}}: </span>
                 <span id="connectionValue" name="connectionValue" class="mat-small mat-caption">{{connection.Value}}</span>
               </div>
               <div fxLayoutAlign="end start" *ngIf="CopyToClipboard === true">

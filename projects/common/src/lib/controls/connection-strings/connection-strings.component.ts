@@ -31,9 +31,21 @@ export class ConnectionStringsComponent implements OnInit {
   public CopyToClipboard: boolean;
 
   /**
+   * Connection string title
+   */
+  // tslint:disable-next-line:no-input-rename
+  @Input('title')
+  public Title: string;
+
+  /**
    * Array of connections
    */
   public Connections: Array<ConnectionStringModel>;
+
+  /**
+   * Property to hold open/close state of panel
+   */
+  public PanelOpenState: boolean;
 
   constructor() { }
 
