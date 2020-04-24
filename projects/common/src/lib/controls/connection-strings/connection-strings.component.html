@@ -1,5 +1,3 @@
-<button matTooltip="asdfs" color="accent" mat-raised-button>Buy Now</button>
-
 <mat-expansion-panel 
   [expanded]="Connections.length > 0"
   (opened)="PanelOpenState = true" 
@@ -19,7 +17,6 @@
   
   <mat-card>
     <mat-card-header>
-      <button matTooltip="ddddd" color="accent" mat-raised-button>Buy Now</button>
         <!-- <mat-card-title>{{ Title }}</mat-card-title> -->
     </mat-card-header>
     <mat-card-content>
@@ -38,23 +35,20 @@
                   <span id="connectionKey" name="connectionKey" class="mat-h3">{{connection.Key}}: </span>
                 </div>
                 <div 
-                  [matTooltip]="connection.Key"
-                  (click)="CopyStringToClipboard(i)" 
-                  class="alert alert-info">
+                  (click)="CopyStringToClipboard(i)">
                   <span id="connectionValue" name="connectionValue" class="mat-small mat-caption">{{connection.Value}}</span>
                 </div>
               </div>
-              <!-- <div>
+              <div>
                 <button
                   id="copyToClipboardButton"
                   name="copyToClipboardButton"
                   type="button"
                   mat-button
-                  matTooltip="Copy {{connection.Key}} string to Clipboard"
                   (click)="CopyStringToClipboard(i)">
                   <mat-icon class="rotate-180 clipboard-icon">save_alt</mat-icon>
                 </button>
-              </div> -->
+              </div>
             </div>
           </mat-list-item>
         </mat-list>
