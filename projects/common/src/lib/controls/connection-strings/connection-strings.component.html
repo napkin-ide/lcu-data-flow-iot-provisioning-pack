@@ -44,9 +44,8 @@
                   name="copyToClipboardButton"
                   type="button"
                   mat-button
-                  matTooltip="Copy string to Clipboard"
-                  matTooltipPosition="right">
-                  <mat-icon class="rotate-180">save_alt</mat-icon>
+                  (click)="CopyStringToClipboard(i)">
+                  <mat-icon class="rotate-180 clipboard-icon">save_alt</mat-icon>
                 </button>
               </div>
             </div>
