@@ -36,13 +36,13 @@
                   <span id="connectionKey" name="connectionKey" class="mat-h3">{{connection.Key}}: </span>
                 </div>
                 <div 
-                  matTooltip="Copy {{connection.Key}} string to Clipboard"
+                  matTooltip=""
                   (click)="CopyStringToClipboard(i)" 
                   class="alert alert-info">
                   <span id="connectionValue" name="connectionValue" class="mat-small mat-caption">{{connection.Value}}</span>
                 </div>
               </div>
-              <div>
+              <!-- <div>
                 <button
                   id="copyToClipboardButton"
                   name="copyToClipboardButton"
@@ -52,7 +52,7 @@
                   (click)="CopyStringToClipboard(i)">
                   <mat-icon class="rotate-180 clipboard-icon">save_alt</mat-icon>
                 </button>
-              </div>
+              </div> -->
             </div>
           </mat-list-item>
         </mat-list>
