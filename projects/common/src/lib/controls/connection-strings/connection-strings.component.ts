@@ -50,6 +50,7 @@ export class ConnectionStringsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
   }
 
  // Helpers
