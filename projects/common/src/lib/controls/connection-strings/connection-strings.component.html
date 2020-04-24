@@ -36,7 +36,7 @@
                   <span id="connectionKey" name="connectionKey" class="mat-h3">{{connection.Key}}: </span>
                 </div>
                 <div 
-                  matTooltip=""
+                  [matTooltip]="connection.Key"
                   (click)="CopyStringToClipboard(i)" 
                   class="alert alert-info">
                   <span id="connectionValue" name="connectionValue" class="mat-small mat-caption">{{connection.Value}}</span>
