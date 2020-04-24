@@ -27,6 +27,7 @@
             
             <div fxFlex fxLayout="row" class="margin-2">
               <div fxFlex="95" fxLayout="column" class="margin-right-3 word-break-all">
+                
                 <div 
                   fxLayout="row" 
                   fxLayoutAlign="start" 
@@ -34,10 +35,25 @@
                   class="margin-bottom-3">
                   <mat-icon color="accent">swap_horizontal_circle</mat-icon>
                   <span id="connectionKey" name="connectionKey" class="mat-h3">{{connection.Key}}: </span>
+                  
                 </div>
                 
                 <span id="connectionValue" name="connectionValue" class="mat-small mat-caption">{{connection.Value}}</span>
               </div>
+
+              <div fxLayoutAlign="start start" *ngIf="CopyToClipboard === true">
+                <button
+                  id="testButton"
+                  name="testButton"
+                  type="button"
+                  mat-button
+                  matTooltip="test button"
+                  matTooltipPosition="right"
+                  (click)="CopyStringToClipboard(i)">
+                  <mat-icon>home</mat-icon>
+                </button>
+              </div>
+
               <div fxLayoutAlign="end start" *ngIf="CopyToClipboard === true">
                 <button
                   id="copyToClipboardButton"
@@ -51,7 +67,6 @@
                 </button>
               </div>
             </div>
-            <mat-divider></mat-divider>
           </mat-list-item>
         </mat-list>
     </mat-card-content>
