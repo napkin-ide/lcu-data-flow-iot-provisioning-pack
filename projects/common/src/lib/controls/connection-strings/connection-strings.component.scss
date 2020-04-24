@@ -9,3 +9,7 @@
   .word-break-all {
     word-break: break-all
   }
+
+  .mat-badge-medium.mat-badge-below .mat-badge-content {
+    bottom: 0px !important;
+  }

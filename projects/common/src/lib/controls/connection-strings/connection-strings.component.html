@@ -1,10 +1,17 @@
 <mat-accordion>
-<mat-expansion-panel (opened)="PanelOpenState = true" (closed)="PanelOpenState = false">
+<mat-expansion-panel 
+  [expanded]="Connections.length > 0"
+  (opened)="PanelOpenState = true" 
+  (closed)="PanelOpenState = false">
     <mat-expansion-panel-header>
       <mat-panel-title>
-        <div fxLayout="row" fxLayoutAlign="start center">
-          <mat-icon color="accent" class="margin-right-2">swap_horizontal_circle</mat-icon>
-          {{ Title }}
+        <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
+          <span 
+            matBadgeColor="primary"
+            matBadge="{{ Connections.length }}"
+            matBadgeOverlap="false"
+            class="margin-3"></span>
+          <span class="margin-left-3">{{ Title }}</span>
         </div>
       </mat-panel-title>
     </mat-expansion-panel-header>
@@ -20,7 +27,15 @@
             
             <div fxFlex fxLayout="row" class="margin-2">
               <div fxFlex="95" fxLayout="column" class="margin-right-3 word-break-all">
-                <span id="connectionKey" name="connectionKey" class="mat-h3">{{connection.Key}}: </span>
+                <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
+                  <mat-icon 
+                    color="accent" 
+                    class="margin-right-2">
+                    swap_horizontal_circle
+                  </mat-icon>
+                  <span id="connectionKey" name="connectionKey" class="mat-h3">{{connection.Key}}: </span>
+                </div>
+                
                 <span id="connectionValue" name="connectionValue" class="mat-small mat-caption">{{connection.Value}}</span>
               </div>
               <div fxLayoutAlign="end start" *ngIf="CopyToClipboard === true">
