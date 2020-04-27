@@ -52,19 +52,19 @@ LcuElementComponent<LcuDataFlowIotProvisioningPackWarmStorageContext> implements
 
     setTimeout(() => {
       if (this.context) {
-        console.log('setTimeout', this.context.State.Infrastructure.Connections);
+        console.log('setTimeout', this.context);
         this.setupComponents();
       }
     }, 1000);
   }
 
   public ngAfterViewInit(): void {
-    setTimeout(() => {
-      if (this.context) {
-        console.log('after view init', this.context.State.Infrastructure.Connections);
-        this.setupComponents();
-      }
-    }, 1000);
+    // setTimeout(() => {
+    //   if (this.context) {
+    //     console.log('after view init', this.context.State.Infrastructure.Connections);
+    //     this.setupComponents();
+    //   }
+    // }, 1000);
   }
   //  API Methods
 
