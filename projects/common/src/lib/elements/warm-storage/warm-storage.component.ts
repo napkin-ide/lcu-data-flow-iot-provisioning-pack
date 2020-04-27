@@ -42,8 +42,12 @@ LcuElementComponent<LcuDataFlowIotProvisioningPackWarmStorageContext> implements
   //  Life Cycle
   public ngOnInit() {
     super.ngOnInit();
-
+    console.log('onInit', this.context.State.Infrastructure.Connections);
     this.setupComponents();
+
+    setTimeout(() => {
+      console.log('setTimeout', this.context.State.Infrastructure.Connections);
+    }, 10000);
   }
 
   //  API Methods
