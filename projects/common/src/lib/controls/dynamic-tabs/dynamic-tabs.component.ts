@@ -11,6 +11,7 @@ import {
   ComponentFactory} from '@angular/core';
 
 import { TabComponentModel } from '../../models/component-tab.model';
+import { debug } from 'util';
 
 @Component({
   selector: 'lcu-dynamic-tabs',
@@ -31,11 +32,12 @@ export class DynamicTabsComponent implements OnInit, AfterViewInit  {
 
   // Lifecycle hook
   public ngOnInit(): void {
-
+    debugger;
+    this.renderComponent(0);
   }
 
   public ngAfterViewInit(): void {
-    this.renderComponent(0);
+    
   }
 
   /**
@@ -55,7 +57,7 @@ export class DynamicTabsComponent implements OnInit, AfterViewInit  {
    * @param index TabComponents index position
    */
   protected renderComponent(index: number) {
-
+    debugger;
       if (!this.TabComponents) {
         return;
       }
