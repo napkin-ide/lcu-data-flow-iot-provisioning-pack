@@ -3,8 +3,7 @@ import { TestOneComponent } from './test-one/test-one.component';
 import { TestTwoComponent } from './test-two/test-two.component';
 import { 
   ConnectionStringsComponent,
-  LcuDataFlowIotProvisioningPackWarmStorageElementState, 
-  TabComponentModel} from '@napkin-ide/lcu-data-flow-iot-provisioning-pack-common';
+  LcuDataFlowIotProvisioningPackWarmStorageElementState} from '@napkin-ide/lcu-data-flow-iot-provisioning-pack-common';
 import { ChartsComponent } from '@napkin-ide/lcu-data-flow-iot-provisioning-pack-common/lib/controls/charts/charts.component';
 
 @Component({
@@ -14,7 +13,7 @@ import { ChartsComponent } from '@napkin-ide/lcu-data-flow-iot-provisioning-pack
 })
 export class DynamicTabTemplatesComponent implements OnInit {
 
-  public Components: Array<TabComponentModel>;
+  // public Components: Array<TabComponentModel>;
 
   public WarmStorageState: LcuDataFlowIotProvisioningPackWarmStorageElementState;
 
@@ -23,15 +22,15 @@ export class DynamicTabTemplatesComponent implements OnInit {
 
   constructor() {
 
-    this.Components = [
-      new TabComponentModel({ Component: TestOneComponent, Label: 'Test One' }),
+    // this.Components = [
+      // new TabComponentModel({ Component: TestOneComponent, Label: 'Test One' }),
       // new TabComponentModel({ Component: ChartsComponent,
       //                         Data: this.context.State.Infrastructure.Connections,
       //                         Label: 'Activity Log' }),
-      new TabComponentModel({ Component: ConnectionStringsComponent, 
-                              Data: this.warmStorage()['Infrastructure']['Connections'], 
-                              Label: 'Connection Strings' })
-    ];
+      // new TabComponentModel({ Component: ConnectionStringsComponent, 
+      //                         Data: this.warmStorage()['Infrastructure']['Connections'], 
+      //                         Label: 'Connection Strings' })
+    // ];
   }
 
   ngOnInit() {
