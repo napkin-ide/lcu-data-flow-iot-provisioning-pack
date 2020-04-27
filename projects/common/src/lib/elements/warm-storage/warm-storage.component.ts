@@ -8,7 +8,7 @@ import { ChartsComponent } from '../../controls/charts/charts.component';
 
 export class LcuDataFlowIotProvisioningPackWarmStorageElementState {
   public Chart: LCUChart;
-  
+
   public Infrastructure: InfrastructureModel;
 }
 
