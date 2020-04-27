@@ -50,12 +50,12 @@ LcuElementComponent<LcuDataFlowIotProvisioningPackWarmStorageContext> implements
   public ngOnInit() {
     super.ngOnInit();
 
-    // setTimeout(() => {
+    setTimeout(() => {
     if (this.context) {
       console.log('setTimeout', this.context);
       this.setupComponents();
     }
-    // }, 1000);
+    }, 1000);
   }
 
   //  API Methods
