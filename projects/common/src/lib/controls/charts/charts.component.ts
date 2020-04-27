@@ -21,7 +21,6 @@ export class ChartsComponent implements OnInit {
     }
 
     this._data = val;
-    // this.connectionStrings();
   }
 
   public get Data(): LCUChart {
