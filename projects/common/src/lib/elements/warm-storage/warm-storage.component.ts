@@ -37,13 +37,14 @@ LcuElementComponent<LcuDataFlowIotProvisioningPackWarmStorageContext> implements
     super(injector);
 
     this.Title = 'Warm Storage Connection Strings';
+    console.log('constructor', this.context.State.Infrastructure.Connections);
   }
 
   //  Life Cycle
   public ngOnInit() {
     super.ngOnInit();
     console.log('onInit', this.context.State.Infrastructure.Connections);
-    this.setupComponents();
+    // this.setupComponents();
 
     setTimeout(() => {
       console.log('setTimeout', this.context.State.Infrastructure.Connections);
