@@ -57,7 +57,7 @@ export class DynamicTabsComponent implements OnInit, AfterViewInit  {
    * @param index TabComponents index position
    */
   protected renderComponent(index: number) {
-    debugger;
+      debugger;
       if (!this.TabComponents) {
         return;
       }
