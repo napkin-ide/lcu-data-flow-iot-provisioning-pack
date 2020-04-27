@@ -40,11 +40,6 @@ LcuElementComponent<LcuDataFlowIotProvisioningPackWarmStorageContext> implements
   //  Constructors
   constructor(protected injector: Injector) {
     super(injector);
-  }
-
-  //  Life Cycle
-  public ngOnInit() {
-    super.ngOnInit();
 
     this.Title = 'Warm Storage Connection Strings';
 
@@ -53,12 +48,21 @@ LcuElementComponent<LcuDataFlowIotProvisioningPackWarmStorageContext> implements
     }
   }
 
+  //  Life Cycle
+  public ngOnInit() {
+    super.ngOnInit();
+  }
+
   //  API Methods
 
   //  Helpers
 
+  public GetStrings(): void {
+    this.setupComponents();
+  }
+
   /**
-   * Setup the required components
+   * Set components for this 
    */
   protected setupComponents(): void {
     this.Components = [
