@@ -44,7 +44,9 @@ LcuElementComponent<LcuDataFlowIotProvisioningPackWarmStorageContext> implements
     this.Title = 'Warm Storage Connection Strings';
 
     if (this.context) {
-      this.setupComponents();
+      setTimeout(() => {
+        this.setupComponents();
+      }, 500);
     }
   }
 
