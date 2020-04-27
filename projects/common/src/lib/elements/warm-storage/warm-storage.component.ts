@@ -43,14 +43,9 @@ LcuElementComponent<LcuDataFlowIotProvisioningPackWarmStorageContext> implements
 
     this.Title = 'Warm Storage Connection Strings';
 
-    this.Components = [
-      new ComponentTabModel({ Component: ChartsComponent,
-                              Data: this.context.State.Chart,
-                              Label: 'Overview' }),
-      new ComponentTabModel({ Component: ConnectionStringsComponent,
-                              Data: this.context.State.Infrastructure.Connections,
-                              Label: 'Connection Strings' })
-    ];
+    if (this.context) {
+      this.setupComponents();
+    }
   }
 
   //  Life Cycle
@@ -61,4 +56,18 @@ LcuElementComponent<LcuDataFlowIotProvisioningPackWarmStorageContext> implements
   //  API Methods
 
   //  Helpers
+
+  /**
+   * Setup the required components
+   */
+  protected setupComponents(): void {
+    this.Components = [
+      new ComponentTabModel({ Component: ChartsComponent,
+                              Data: this.context.State.Chart,
+                              Label: 'Overview' }),
+      new ComponentTabModel({ Component: ConnectionStringsComponent,
+                              Data: this.context.State.Infrastructure.Connections,
+                              Label: 'Connection Strings' })
+    ];
+  }
 }
