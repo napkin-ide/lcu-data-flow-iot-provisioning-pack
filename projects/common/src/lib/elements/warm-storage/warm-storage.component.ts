@@ -1,11 +1,15 @@
 import { InfrastructureModel } from './../../models/infrastructure.model';
-import { Component, OnInit, Injector } from '@angular/core';
+import { Component, OnInit, Injector, AfterViewInit } from '@angular/core';
 import { LCUElementContext, LcuElementComponent } from '@lcu/common';
 import { TabComponentModel } from '../../models/component-tab.model';
 import { ConnectionStringsComponent } from '../../controls/connection-strings/connection-strings.component';
+import { ChartsComponent } from '../../controls/charts/charts.component';
+import { LCUChart } from '../../models/chart';
 
 export class LcuDataFlowIotProvisioningPackWarmStorageElementState {
   public Infrastructure: InfrastructureModel;
+
+  public Chart: LCUChart;
 }
 
 export class LcuDataFlowIotProvisioningPackWarmStorageContext extends
@@ -20,7 +24,7 @@ export const SelectorLcuDataFlowIotProvisioningPackWarmStorageElement = 'lcu-dat
 })
 
 export class LcuDataFlowIotProvisioningPackWarmStorageElementComponent extends
-LcuElementComponent<LcuDataFlowIotProvisioningPackWarmStorageContext> implements OnInit {
+LcuElementComponent<LcuDataFlowIotProvisioningPackWarmStorageContext> implements OnInit, AfterViewInit {
   //  Fields
 
   //  Properties
@@ -45,18 +49,23 @@ LcuElementComponent<LcuDataFlowIotProvisioningPackWarmStorageContext> implements
   //  Life Cycle
   public ngOnInit() {
     super.ngOnInit();
-    if (this.context) {
-      console.log('onInit', this.context.State.Infrastructure.Connections);
-    }
-    // this.setupComponents();
 
     setTimeout(() => {
       if (this.context) {
         console.log('setTimeout', this.context.State.Infrastructure.Connections);
+        this.setupComponents();
       }
-    }, 10000);
+    }, 1000);
   }
 
+  public ngAfterViewInit(): void {
+    setTimeout(() => {
+      if (this.context) {
+        console.log('after view init', this.context.State.Infrastructure.Connections);
+        this.setupComponents();
+      }
+    }, 1000);
+  }
   //  API Methods
 
   //  Helpers
@@ -66,9 +75,9 @@ LcuElementComponent<LcuDataFlowIotProvisioningPackWarmStorageContext> implements
    */
   protected setupComponents(): void {
     this.Components = [
-      // new TabComponentModel({ Component: ChartsComponent,
-      //                         Data: this.context.State.Chart,
-      //                         Label: 'Overview' }),
+      new TabComponentModel({ Component: ChartsComponent,
+                              Data: this.context.State.Chart,
+                              Label: 'Overview' }),
       new TabComponentModel({ Component: ConnectionStringsComponent,
                               Data: this.context.State.Infrastructure.Connections,
                               Label: 'Connection Strings' })
