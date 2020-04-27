@@ -13,6 +13,7 @@ import { LcuDataFlowIotProvisioningPackDataEmulatorElementComponent } from './el
 import { LcuDataFlowIotProvisioningPackWarmQueryElementComponent } from './elements/warm-query/warm-query.component';
 import { ConnectionStringsComponent } from './controls/connection-strings/connection-strings.component';
 import { DynamicTabsComponent } from './controls/dynamic-tabs/dynamic-tabs.component';
+import { ChartsComponent } from './controls/charts/charts.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { DynamicTabsComponent } from './controls/dynamic-tabs/dynamic-tabs.compo
     LcuDataFlowIotProvisioningPackDataEmulatorElementComponent,
     LcuDataFlowIotProvisioningPackWarmQueryElementComponent,
     ConnectionStringsComponent,
-    DynamicTabsComponent
+    DynamicTabsComponent,
+    ChartsComponent
   ],
   entryComponents: [
     LcuDataFlowIotProvisioningPackDataStreamElementComponent,
@@ -37,7 +39,8 @@ import { DynamicTabsComponent } from './controls/dynamic-tabs/dynamic-tabs.compo
     LcuDataFlowIotProvisioningPackDataEmulatorElementComponent,
     LcuDataFlowIotProvisioningPackWarmQueryElementComponent,
     ConnectionStringsComponent,
-    DynamicTabsComponent
+    DynamicTabsComponent,
+    ChartsComponent
   ],
   exports: [
     LcuDataFlowIotProvisioningPackDataStreamElementComponent,
@@ -49,7 +52,8 @@ import { DynamicTabsComponent } from './controls/dynamic-tabs/dynamic-tabs.compo
     LcuDataFlowIotProvisioningPackDataEmulatorElementComponent,
     LcuDataFlowIotProvisioningPackWarmQueryElementComponent,
     ConnectionStringsComponent,
-    DynamicTabsComponent
+    DynamicTabsComponent,
+    ChartsComponent
   ],
   imports: [
     FathymSharedModule,

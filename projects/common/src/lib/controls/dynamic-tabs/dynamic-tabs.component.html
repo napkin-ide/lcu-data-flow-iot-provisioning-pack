@@ -1,5 +1,11 @@
-<mat-tab-group (selectedIndexChange)="tabChange($event)">
-    <mat-tab label="Tab" *ngFor="let component of Components">
+<!--Look at this for a different kind of example?
+https://juristr.com/blog/2017/07/ng2-dynamic-tab-component/
+-->
+
+<mat-tab-group (selectedIndexChange)="TabChange($event)">
+    <mat-tab 
+        *ngFor="let component of TabComponents"
+        [label]="component.Label" >
         <ng-template matTabContent>
             <div #container></div>
         </ng-template>

@@ -1,0 +1,10 @@
+<canvas
+    *ngIf="Data"
+    baseChart
+    chartType="line"
+    [legend]="false"
+    [options]="Data.Options"
+    [labels]="Data.Labels"
+    [colors]="Data.Colors"
+    [datasets]="Data.Results">
+</canvas>

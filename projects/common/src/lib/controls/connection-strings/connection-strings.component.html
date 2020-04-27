@@ -1,4 +1,5 @@
 <mat-expansion-panel 
+  *ngIf="Connections"
   [expanded]="Connections.length > 0"
   (opened)="PanelOpenState = true" 
   (closed)="PanelOpenState = false">

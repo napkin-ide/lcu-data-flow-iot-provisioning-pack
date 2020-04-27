@@ -16,9 +16,19 @@ import { LcuDataFlowIotProvisioningPackModule } from '@napkin-ide/lcu-data-flow-
 import { DeviceStreamComponent } from './controls/device-stream/device-stream.component';
 import { DataStreamComponent } from './controls/data-stream/data-stream.component';
 import { WarmStorageComponent } from './controls/warm-storage/warm-storage.component';
+import { DynamicTabTemplatesComponent } from './controls/dynamic-tab-templates/dynamic-tab-templates.component';
+import { TestOneComponent } from './controls/dynamic-tab-templates/test-one/test-one.component';
+import { TestTwoComponent } from './controls/dynamic-tab-templates/test-two/test-two.component';
 
 @NgModule({
-  declarations: [AppComponent, DataStreamComponent, DeviceStreamComponent, WarmStorageComponent],
+  declarations: [
+    AppComponent, 
+    DataStreamComponent, 
+    DeviceStreamComponent, 
+    WarmStorageComponent, 
+    DynamicTabTemplatesComponent, 
+    TestOneComponent, 
+    TestTwoComponent,],
   imports: [
     BrowserAnimationsModule,
     AppRoutingModule,
@@ -36,7 +46,11 @@ import { WarmStorageComponent } from './controls/warm-storage/warm-storage.compo
     }
   ],
   bootstrap: [AppComponent],
-  exports: [WarmStorageComponent],
-  entryComponents: [WarmStorageComponent]
+  exports: [WarmStorageComponent, DynamicTabTemplatesComponent, TestOneComponent, TestTwoComponent],
+  entryComponents: [
+    WarmStorageComponent,
+    DynamicTabTemplatesComponent,
+    TestOneComponent,
+    TestTwoComponent]
 })
 export class AppModule {}

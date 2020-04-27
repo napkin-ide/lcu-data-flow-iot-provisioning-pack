@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ConnectionStringModel } from '../../models/connection-string.model';
 import { LCUElementContext } from '@lcu/common';
+import { InfrastructureModel } from '../../models/infrastructure.model';
 
 @Component({
   selector: 'lcu-connection-strings',
@@ -10,17 +11,23 @@ import { LCUElementContext } from '@lcu/common';
 export class ConnectionStringsComponent implements OnInit {
 
   /**
-   * Input property for context
+   * Input property for data
    */
-  private _connectionStrings: object;
-  @Input('connection-strings')
-  public set ConnectionStrings(val: object) {
-    this._connectionStrings = val;
+  // tslint:disable-next-line:variable-name
+  private _data: InfrastructureModel;
+  @Input('data')
+  public set Data(val: InfrastructureModel) {
+
+    if (!val) {
+      return;
+    }
+
+    this._data = val;
     this.connectionStrings();
   }
 
-  public get ConnectionStrings(): object {
-    return this._connectionStrings;
+  public get Data(): InfrastructureModel {
+    return this._data;
   }
 
   /**
@@ -49,9 +56,7 @@ export class ConnectionStringsComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-    
-  }
+  ngOnInit() {}
 
  // Helpers
 
@@ -78,17 +83,13 @@ export class ConnectionStringsComponent implements OnInit {
   protected connectionStrings(): void {
     this.Connections = [];
 
-    if (!this.ConnectionStrings) {
+    if (!this.Data) {
       return;
     }
 
-    Object.entries(this.ConnectionStrings).forEach((itm: Array<any>) => {
+    Object.entries(this.Data).forEach((itm: Array<any>) => {
       this.Connections.push(new ConnectionStringModel(itm[0], itm[1]));
     });
-
-    // Object.entries(this.Context.State.Infrastructure.Connections).forEach((itm: Array<any>) => {
-    //   this.Connections.push(new ConnectionStringModel(itm[0], itm[1]));
-    // });
   }
 
 }

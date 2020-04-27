@@ -18,9 +18,8 @@ export class LcuDataFlowIotProvisioningPackDataStreamElementState {
   public Infrastructure: InfrastructureModel;
 }
 
-export class LcuDataFlowIotProvisioningPackDataStreamContext extends LCUElementContext<
-  LcuDataFlowIotProvisioningPackDataStreamElementState
-> {
+export class LcuDataFlowIotProvisioningPackDataStreamContext extends 
+LCUElementContext<LcuDataFlowIotProvisioningPackDataStreamElementState> {
   public Module: DataFlowModule;
 }
 
