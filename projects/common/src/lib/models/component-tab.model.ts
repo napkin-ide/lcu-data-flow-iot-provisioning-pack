@@ -1,5 +1,5 @@
 
-export class ComponentTabModel {
+export class TabComponentModel {
 
     /**
      * Component instance to add to the tab
@@ -16,7 +16,7 @@ export class ComponentTabModel {
      */
     public Label: string;
 
-    constructor(opts: ComponentTabModel) {
+    constructor(opts: TabComponentModel) {
         Object.assign(this, opts); // destructure values
     }
   }

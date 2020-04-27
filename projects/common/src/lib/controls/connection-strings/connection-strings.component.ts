@@ -87,7 +87,7 @@ export class ConnectionStringsComponent implements OnInit {
       return;
     }
 
-    Object.entries(this.Data).forEach((itm: Array<any>) => {
+    Object.entries(this.Data).forEach((itm: Array<string>) => {
       this.Connections.push(new ConnectionStringModel(itm[0], itm[1]));
     });
   }

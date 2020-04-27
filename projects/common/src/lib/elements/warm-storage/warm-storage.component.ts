@@ -2,7 +2,7 @@ import { LCUChart } from './../../models/chart';
 import { InfrastructureModel } from './../../models/infrastructure.model';
 import { Component, OnInit, Injector } from '@angular/core';
 import { LCUElementContext, LcuElementComponent } from '@lcu/common';
-import { ComponentTabModel } from '../../models/component-tab.model';
+import { TabComponentModel } from '../../models/component-tab.model';
 import { ConnectionStringsComponent } from '../../controls/connection-strings/connection-strings.component';
 import { ChartsComponent } from '../../controls/charts/charts.component';
 
@@ -30,7 +30,7 @@ LcuElementComponent<LcuDataFlowIotProvisioningPackWarmStorageContext> implements
 
   //  Properties
 
-  public Components: Array<ComponentTabModel>;
+  public Components: Array<TabComponentModel>;
 
   /**
    * Connection string title
@@ -62,10 +62,10 @@ LcuElementComponent<LcuDataFlowIotProvisioningPackWarmStorageContext> implements
    */
   protected setupComponents(): void {
     this.Components = [
-      new ComponentTabModel({ Component: ChartsComponent,
+      new TabComponentModel({ Component: ChartsComponent,
                               Data: this.context.State.Chart,
                               Label: 'Overview' }),
-      new ComponentTabModel({ Component: ConnectionStringsComponent,
+      new TabComponentModel({ Component: ConnectionStringsComponent,
                               Data: this.context.State.Infrastructure.Connections,
                               Label: 'Connection Strings' })
     ];

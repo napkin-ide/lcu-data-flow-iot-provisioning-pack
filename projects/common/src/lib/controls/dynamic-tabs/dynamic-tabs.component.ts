@@ -10,7 +10,7 @@ import {
   ElementRef, 
   ComponentFactory} from '@angular/core';
 
-import { ComponentTabModel } from '../../models/component-tab.model';
+import { TabComponentModel } from '../../models/component-tab.model';
 
 @Component({
   selector: 'lcu-dynamic-tabs',
@@ -22,7 +22,7 @@ export class DynamicTabsComponent implements OnInit, AfterViewInit  {
 
   // tslint:disable-next-line:no-input-rename
   @Input('tab-components')
-  public TabComponents: Array<ComponentTabModel>;
+  public TabComponents: Array<TabComponentModel>;
 
   @ViewChild('container', {read: ViewContainerRef, static: false})
   protected viewContainer: ViewContainerRef;
@@ -56,6 +56,10 @@ export class DynamicTabsComponent implements OnInit, AfterViewInit  {
    */
   protected renderComponent(index: number) {
 
+      if (!this.TabComponents) {
+        return;
+      }
+
       // factory for creating a dynamic component
       const factory: ComponentFactory<any> = this.componentFactoryResolver
       .resolveComponentFactory(this.TabComponents[index].Component);
@@ -67,7 +71,7 @@ export class DynamicTabsComponent implements OnInit, AfterViewInit  {
       const instance: DynamicTabsComponent = componentRef.instance as DynamicTabsComponent;
 
       // find the current component in TabComponents and set its data
-      this.TabComponents.find((comp: ComponentTabModel) => {
+      this.TabComponents.find((comp: TabComponentModel) => {
         if (comp.Component.name === instance.constructor.name) {
           instance['Data'] = comp.Data;
         }
