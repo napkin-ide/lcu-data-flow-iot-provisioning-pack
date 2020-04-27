@@ -1,6 +1,8 @@
 import { InfrastructureModel } from './../../models/infrastructure.model';
 import { Component, OnInit, Injector } from '@angular/core';
 import { LCUElementContext, LcuElementComponent } from '@lcu/common';
+import { TabComponentModel } from '../../models/component-tab.model';
+import { ConnectionStringsComponent } from '../../controls/connection-strings/connection-strings.component';
 
 export class LcuDataFlowIotProvisioningPackWarmStorageElementState {
   public Infrastructure: InfrastructureModel;
@@ -23,6 +25,8 @@ LcuElementComponent<LcuDataFlowIotProvisioningPackWarmStorageContext> implements
 
   //  Properties
 
+  public Components: Array<TabComponentModel>;
+
   /**
    * Connection string title
    */
@@ -38,11 +42,27 @@ LcuElementComponent<LcuDataFlowIotProvisioningPackWarmStorageContext> implements
   //  Life Cycle
   public ngOnInit() {
     super.ngOnInit();
+
+    this.setupComponents();
   }
 
   //  API Methods
 
   //  Helpers
+
+  /**
+   * Set components for this module
+   */
+  protected setupComponents(): void {
+    this.Components = [
+      // new TabComponentModel({ Component: ChartsComponent,
+      //                         Data: this.context.State.Chart,
+      //                         Label: 'Overview' }),
+      new TabComponentModel({ Component: ConnectionStringsComponent,
+                              Data: this.context.State.Infrastructure.Connections,
+                              Label: 'Connection Strings' })
+    ];
+  }
 }
 
 
