@@ -1,6 +1,6 @@
 import { LCUChart } from './../../models/chart';
 import { InfrastructureModel } from './../../models/infrastructure.model';
-import { Component, OnInit, Injector } from '@angular/core';
+import { Component, OnInit, Injector, AfterViewInit } from '@angular/core';
 import { LCUElementContext, LcuElementComponent } from '@lcu/common';
 import { TabComponentModel } from '../../models/component-tab.model';
 import { ConnectionStringsComponent } from '../../controls/connection-strings/connection-strings.component';
@@ -25,7 +25,7 @@ export const SelectorLcuDataFlowIotProvisioningPackWarmStorageElement =
 })
 
 export class LcuDataFlowIotProvisioningPackWarmStorageElementComponent extends
-LcuElementComponent<LcuDataFlowIotProvisioningPackWarmStorageContext> implements OnInit {
+LcuElementComponent<LcuDataFlowIotProvisioningPackWarmStorageContext> implements OnInit, AfterViewInit {
   //  Fields
 
   //  Properties
@@ -42,17 +42,15 @@ LcuElementComponent<LcuDataFlowIotProvisioningPackWarmStorageContext> implements
     super(injector);
 
     this.Title = 'Warm Storage Connection Strings';
-
-    if (this.context) {
-      setTimeout(() => {
-        this.setupComponents();
-      }, 500);
-    }
   }
 
   //  Life Cycle
-  public ngOnInit() {
+  public ngOnInit(): void {
     super.ngOnInit();
+  }
+
+  public ngAfterViewInit(): void {
+    this.setupComponents();
   }
 
   //  API Methods
