@@ -50,6 +50,12 @@ LcuElementComponent<LcuDataFlowIotProvisioningPackWarmStorageContext> implements
   }
 
   public ngAfterViewInit(): void {
+
+    if (!this.context) {
+      console.log('no warm storage data');
+      return;
+    }
+
     this.setupComponents();
   }
 
@@ -62,7 +68,7 @@ LcuElementComponent<LcuDataFlowIotProvisioningPackWarmStorageContext> implements
   }
 
   /**
-   * Set components for this 
+   * Set components for this module
    */
   protected setupComponents(): void {
     this.Components = [
