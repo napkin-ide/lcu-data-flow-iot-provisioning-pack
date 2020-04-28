@@ -15,7 +15,6 @@ export class ChartsComponent implements OnInit {
   private _data: LCUChart;
   @Input('data')
   public set Data(val: LCUChart) {
-    alert(val);
     if (!val) {
       return;
     }
