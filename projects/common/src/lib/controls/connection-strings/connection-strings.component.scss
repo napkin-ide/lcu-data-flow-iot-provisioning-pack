@@ -1,0 +1,68 @@
+.rotate-180 {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  
+  .word-break-all {
+    word-break: break-all
+  }
+
+  .mat-badge-medium.mat-badge-below .mat-badge-content {
+    bottom: 0px !important;
+  }
+
+  .alert-info {
+    color: #0c5460;
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+  }
+
+  .alert-info:hover{
+    color: #d1ecf1;
+    background-color: #0c5460;
+  }
+
+  .alert {
+    position: relative;
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    cursor: pointer;
+  }
+
+  // @mixin alert-variant($background, $border, $color) {
+  //   color: $color;
+  //   @include gradient-bg($background);
+  //   border-color: $border;
+  
+  //   hr {
+  //     border-top-color: darken($border, 5%);
+  //   }
+  
+  //   .alert-link {
+  //     color: darken($color, 10%);
+  //   }
+  // }
+  
+  // .alert {
+  //   position: relative;
+  //   padding: $alert-padding-y $alert-padding-x;
+  //   margin-bottom: $alert-margin-bottom;
+  //   border: $alert-border-width solid transparent;
+  //   @include border-radius($alert-border-radius);
+  // }
+  
+  // // Headings for larger alerts
+  // .alert-heading {
+  //   // Specified to prevent conflicts of changing $headings-color
+  //   color: inherit;
+  // }
+  
+  // // Provide class for links that match alerts
+  // .alert-link {
+  //   font-weight: $alert-link-font-weight;
+  // }

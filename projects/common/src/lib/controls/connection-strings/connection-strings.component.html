@@ -1,0 +1,58 @@
+<mat-expansion-panel 
+  *ngIf="Connections"
+  [expanded]="Connections.length > 0"
+  (opened)="PanelOpenState = true" 
+  (closed)="PanelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
+          <span 
+            matBadgeColor="primary"
+            matBadge="{{ Connections.length }}"
+            matBadgeOverlap="false"
+            class="margin-3"></span>
+          <span class="margin-left-3">{{ Title }}</span>
+        </div>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+  
+  <mat-card>
+    <mat-card-header>
+        <!-- <mat-card-title>{{ Title }}</mat-card-title> -->
+    </mat-card-header>
+    <mat-card-content>
+        <mat-list *ngFor="let connection of Connections; let i = index; let odd = odd; let even = even">
+          <!--odd and even styles are set in the parent component-->
+          <mat-list-item [ngClass]="{ odd: odd, even: even }" style="height: auto;">
+            
+            <div fxFlex fxLayout="row" class="margin-2">
+              <div fxFlex="95" fxLayout="column" class="margin-right-3 word-break-all">
+                <div 
+                  fxLayout="row" 
+                  fxLayoutAlign="start" 
+                  fxLayoutGap="10px"
+                  class="margin-bottom-3">
+                  <mat-icon color="accent">swap_horizontal_circle</mat-icon>
+                  <span id="connectionKey" name="connectionKey" class="mat-h3">{{connection.Key}}: </span>
+                </div>
+                <div 
+                  (click)="CopyStringToClipboard(i)">
+                  <span id="connectionValue" name="connectionValue" class="mat-small mat-caption">{{connection.Value}}</span>
+                </div>
+              </div>
+              <div>
+                <button
+                  id="copyToClipboardButton"
+                  name="copyToClipboardButton"
+                  type="button"
+                  mat-button
+                  (click)="CopyStringToClipboard(i)">
+                  <mat-icon class="rotate-180 clipboard-icon">save_alt</mat-icon>
+                </button>
+              </div>
+            </div>
+          </mat-list-item>
+        </mat-list>
+    </mat-card-content>
+  </mat-card>
+</mat-expansion-panel>

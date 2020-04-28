@@ -11,7 +11,9 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ChartsModule } from 'ng2-charts';
 import { LcuDataFlowIotProvisioningPackDataEmulatorElementComponent } from './elements/data-emulator/data-emulator.component';
 import { LcuDataFlowIotProvisioningPackWarmQueryElementComponent } from './elements/warm-query/warm-query.component';
-import { ConnectionStringsComponent } from './elements/connection-strings/connection-strings.component';
+import { ConnectionStringsComponent } from './controls/connection-strings/connection-strings.component';
+import { DynamicTabsComponent } from './controls/dynamic-tabs/dynamic-tabs.component';
+import { ChartsComponent } from './controls/charts/charts.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { ConnectionStringsComponent } from './elements/connection-strings/connec
     LcuDataFlowIotProvisioningPackHotStorageElementComponent,
     LcuDataFlowIotProvisioningPackDataEmulatorElementComponent,
     LcuDataFlowIotProvisioningPackWarmQueryElementComponent,
-    ConnectionStringsComponent
+    ConnectionStringsComponent,
+    DynamicTabsComponent,
+    ChartsComponent
   ],
   entryComponents: [
     LcuDataFlowIotProvisioningPackDataStreamElementComponent,
@@ -34,7 +38,9 @@ import { ConnectionStringsComponent } from './elements/connection-strings/connec
     LcuDataFlowIotProvisioningPackHotStorageElementComponent,
     LcuDataFlowIotProvisioningPackDataEmulatorElementComponent,
     LcuDataFlowIotProvisioningPackWarmQueryElementComponent,
-    ConnectionStringsComponent
+    ConnectionStringsComponent,
+    DynamicTabsComponent,
+    ChartsComponent
   ],
   exports: [
     LcuDataFlowIotProvisioningPackDataStreamElementComponent,
@@ -45,7 +51,9 @@ import { ConnectionStringsComponent } from './elements/connection-strings/connec
     LcuDataFlowIotProvisioningPackHotStorageElementComponent,
     LcuDataFlowIotProvisioningPackDataEmulatorElementComponent,
     LcuDataFlowIotProvisioningPackWarmQueryElementComponent,
-    ConnectionStringsComponent
+    ConnectionStringsComponent,
+    DynamicTabsComponent,
+    ChartsComponent
   ],
   imports: [
     FathymSharedModule,
