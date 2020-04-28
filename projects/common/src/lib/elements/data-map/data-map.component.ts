@@ -1,18 +1,30 @@
 import { Component, OnInit, Injector } from '@angular/core';
 import { LCUElementContext, LcuElementComponent } from '@lcu/common';
+import { LCUChart } from '../../models/chart';
 
-export class LcuDataFlowIotProvisioningPackDataMapElementState {}
+export class LcuDataFlowIotProvisioningPackDataMapElementState {
+  public ActivityLogs?: string[];
 
-export class LcuDataFlowIotProvisioningPackDataMapContext extends LCUElementContext<LcuDataFlowIotProvisioningPackDataMapElementState> {}
+  public Devices?: any[];
 
-export const SelectorLcuDataFlowIotProvisioningPackDataMapElement = 'lcu-data-flow-iot-provisioning-pack-data-map-element';
+  public Chart: LCUChart;
+}
+
+export class LcuDataFlowIotProvisioningPackDataMapContext extends LCUElementContext<
+  LcuDataFlowIotProvisioningPackDataMapElementState
+> {}
+
+export const SelectorLcuDataFlowIotProvisioningPackDataMapElement =
+  'lcu-data-flow-iot-provisioning-pack-data-map-element';
 
 @Component({
   selector: SelectorLcuDataFlowIotProvisioningPackDataMapElement,
   templateUrl: './data-map.component.html',
   styleUrls: ['./data-map.component.scss']
 })
-export class LcuDataFlowIotProvisioningPackDataMapElementComponent extends LcuElementComponent<LcuDataFlowIotProvisioningPackDataMapContext> implements OnInit {
+export class LcuDataFlowIotProvisioningPackDataMapElementComponent
+  extends LcuElementComponent<LcuDataFlowIotProvisioningPackDataMapContext>
+  implements OnInit {
   //  Fields
 
   //  Properties
@@ -28,6 +40,8 @@ export class LcuDataFlowIotProvisioningPackDataMapElementComponent extends LcuEl
   }
 
   //  API Methods
-
+  public EnableActivityLogs() {
+    alert('Enabling Activity Logs');
+  }
   //  Helpers
 }

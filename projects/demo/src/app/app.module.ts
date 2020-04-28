@@ -1,5 +1,5 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { environment } from '../environments/environment';
@@ -19,16 +19,18 @@ import { WarmStorageComponent } from './controls/warm-storage/warm-storage.compo
 import { DynamicTabTemplatesComponent } from './controls/dynamic-tab-templates/dynamic-tab-templates.component';
 import { TestOneComponent } from './controls/dynamic-tab-templates/test-one/test-one.component';
 import { TestTwoComponent } from './controls/dynamic-tab-templates/test-two/test-two.component';
+import { DataMapComponent } from './controls/data-map/data-map.component';
+import { LazyElementModule } from '@lowcodeunit/lazy-element';
 
 @NgModule({
   declarations: [
-    AppComponent, 
-    DataStreamComponent, 
-    DeviceStreamComponent, 
-    WarmStorageComponent, 
-    DynamicTabTemplatesComponent, 
-    TestOneComponent, 
-    TestTwoComponent,],
+          AppComponent, 
+          DataStreamComponent, 
+          DeviceStreamComponent, 
+          WarmStorageComponent, 
+          DynamicTabTemplatesComponent, 
+          TestOneComponent, 
+          TestTwoComponent],
   imports: [
     BrowserAnimationsModule,
     AppRoutingModule,
@@ -37,8 +39,10 @@ import { TestTwoComponent } from './controls/dynamic-tab-templates/test-two/test
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
-    LcuDataFlowIotProvisioningPackModule
+    // LcuDataFlowIotProvisioningPackModule,
+    LazyElementModule
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [
     {
       provide: LCUServiceSettings,

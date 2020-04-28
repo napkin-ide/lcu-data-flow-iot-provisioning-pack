@@ -8,8 +8,7 @@
 		"wc": [
 			"wc/lcu-data-flow-iot-provisioning-pack.lcu.js"
 		],
-		"solutions": {
-		},
+		"solutions": {},
 		"elements": {},
 		"data-flows": {
 			"Pack": {
@@ -25,7 +24,7 @@
 					"IncomingConnectionLimit": 0,
 					"IncomingConnectionTypes": [],
 					"Name": "Data Emulator",
-					"OutgoingConnectionLimit": 1,
+					"OutgoingConnectionLimit": -1,
 					"OutgoingConnectionTypes": [
 						"data-stream"
 					]
@@ -34,10 +33,10 @@
 					"ModuleType": "data-stream",
 					"ControlType": "Gate",
 					"Description": "Stream your non device data through Fathym for analysis and optimization.",
-					"IncomingConnectionLimit": 0,
+					"IncomingConnectionLimit": -1,
 					"IncomingConnectionTypes": [],
 					"Name": "Data Stream",
-					"OutgoingConnectionLimit": 1,
+					"OutgoingConnectionLimit": -1,
 					"OutgoingConnectionTypes": [
 						"data-map"
 					]
@@ -49,7 +48,7 @@
 					"IncomingConnectionLimit": 0,
 					"IncomingConnectionTypes": [],
 					"Name": "Device Stream",
-					"OutgoingConnectionLimit": 1,
+					"OutgoingConnectionLimit": -1,
 					"OutgoingConnectionTypes": [
 						"data-map"
 					]
@@ -58,7 +57,7 @@
 					"ModuleType": "cold-storage",
 					"ControlType": "Gate",
 					"Description": "For archive/cold datasets that can be used to create richer datasets in the future.",
-					"IncomingConnectionLimit": 1,
+					"IncomingConnectionLimit": -1,
 					"IncomingConnectionTypes": [
 						"data-map"
 					],
@@ -70,7 +69,7 @@
 					"ModuleType": "warm-query",
 					"ControlType": "Gate",
 					"Description": "Query Warm Storage assets.",
-					"IncomingConnectionLimit": 1,
+					"IncomingConnectionLimit": -1,
 					"IncomingConnectionTypes": [
 						"warm-storage"
 					],
@@ -82,21 +81,21 @@
 					"ModuleType": "warm-storage",
 					"ControlType": "Gate",
 					"Description": "For highly available datasets requiring querying, aggregation, and massive scale.",
-					"IncomingConnectionLimit": 1,
+					"IncomingConnectionLimit": -1,
 					"IncomingConnectionTypes": [
 						"data-map"
 					],
 					"Name": "Warm Storage",
-					"OutgoingConnectionLimit": 1,
+					"OutgoingConnectionLimit": -1,
 					"OutgoingConnectionTypes": [
-            "warm-storage"
-          ]
+						"warm-query"
+					]
 				},
 				{
 					"ModuleType": "hot-storage",
 					"ControlType": "Gate",
 					"Description": "Real-Time data feeds for connections with Fathym Server, external partners, and other cloud services.",
-					"IncomingConnectionLimit": 1,
+					"IncomingConnectionLimit": -1,
 					"IncomingConnectionTypes": [
 						"data-map"
 					],

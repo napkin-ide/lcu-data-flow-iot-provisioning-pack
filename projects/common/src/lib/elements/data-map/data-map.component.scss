@@ -1,0 +1,23 @@
+:host ::ng-deep {
+  .mapping-contents {
+    height: 100%;
+  }
+
+  .mat-tab-group {
+    height: 100%;
+
+    .mat-tab-body-wrapper {
+      height: 100%;
+    }
+  }
+
+  .mat-list {
+    position: relative;
+
+    .mat-list-item {
+      .mat-list-item-content {
+        height: auto;
+      }
+    }
+  }
+}

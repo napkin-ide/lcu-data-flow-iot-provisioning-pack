@@ -65,7 +65,7 @@ import { ChartsComponent } from './controls/charts/charts.component';
   ]
 })
 export class LcuDataFlowIotProvisioningPackModule {
-  public static forRoot(): ModuleWithProviders {
+  public static forRoot(): ModuleWithProviders<LcuDataFlowIotProvisioningPackModule> {
     return {
       ngModule: LcuDataFlowIotProvisioningPackModule,
       providers: []

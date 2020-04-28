@@ -1,15 +1,12 @@
 import { Component, OnInit, Input, HostBinding } from '@angular/core';
-import {
-  LcuDataFlowIotProvisioningPackDeviceStreamElementState,
-  LcuDataFlowIotProvisioningPackDataStreamElementState
-} from '@napkin-ide/lcu-data-flow-iot-provisioning-pack-common';
+import { LcuDataFlowIotProvisioningPackDataMapElementState } from '@napkin-ide/lcu-data-flow-iot-provisioning-pack-common';
 
 @Component({
-  selector: 'lcu-device-stream',
-  templateUrl: './device-stream.component.html',
-  styleUrls: ['./device-stream.component.scss']
+  selector: 'lcu-data-map',
+  templateUrl: './data-map.component.html',
+  styleUrls: ['./data-map.component.scss']
 })
-export class DeviceStreamComponent implements OnInit {
+export class DataMapComponent implements OnInit {
   /**
    * Input property for background image
    */
@@ -17,16 +14,15 @@ export class DeviceStreamComponent implements OnInit {
   @Input('background-image')
   public BackgroundImage: string;
 
-  public DeviceStreamState: LcuDataFlowIotProvisioningPackDeviceStreamElementState;
+  public DataMapState: LcuDataFlowIotProvisioningPackDataMapElementState;
 
-  @HostBinding('class.device-stream')
+  @HostBinding('class.data-map')
   public HostTypeClass = true;
 
   constructor() {}
 
   ngOnInit() {
-    this.DeviceStreamState = {
-      Devices: [],
+    this.DataMapState = {
       Chart: {
         Results: [
           { data: [10, 8, 12, 14, 9, 10, 1], label: 'Success' },
