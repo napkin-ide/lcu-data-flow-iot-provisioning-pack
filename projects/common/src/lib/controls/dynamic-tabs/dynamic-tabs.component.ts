@@ -44,9 +44,9 @@ export class DynamicTabsComponent implements OnInit, AfterViewInit  {
    * @param index selected tab index
    */
   public TabChange(index: number): void {
-    setTimeout(() => {
-        this.renderComponent(index);
-    }, 1000);
+    // setTimeout(() => {
+    //     this.renderComponent(index);
+    // }, 1000);
 
     this.renderComponent(index);
   }
