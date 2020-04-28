@@ -1,3 +1,13 @@
 <ng-container *ngIf="context && context.State">
-    <lcu-dynamic-tabs [tab-components]="Components"></lcu-dynamic-tabs>
+    <mat-tab-group>
+        <mat-tab label="Connection Strings">
+            <lcu-connection-strings 
+                [data]="context.State.Infrastructure.Connections"
+                [copy-to-clipboard]="true">
+            </lcu-connection-strings>
+        </mat-tab>
+    </mat-tab-group>
 </ng-container>
+<!-- <ng-container *ngIf="context && context.State">
+    <lcu-dynamic-tabs [tab-components]="Components"></lcu-dynamic-tabs>
+</ng-container> -->
