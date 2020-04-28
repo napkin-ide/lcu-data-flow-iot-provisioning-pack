@@ -1,3 +1,4 @@
+<ng-container *ngIf="Data">
 <canvas
     *ngIf="Data"
     baseChart
@@ -9,3 +10,5 @@
     [datasets]="Data.Results">
 </canvas>
 <pre *ngIf="Data">{{Data | json}}</pre>
+</ng-container>
+<div style="height: 100px; width: 100px; background-color: red"></div> 
