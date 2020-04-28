@@ -19,8 +19,8 @@ import { WarmStorageComponent } from './controls/warm-storage/warm-storage.compo
 import { DynamicTabTemplatesComponent } from './controls/dynamic-tab-templates/dynamic-tab-templates.component';
 import { TestOneComponent } from './controls/dynamic-tab-templates/test-one/test-one.component';
 import { TestTwoComponent } from './controls/dynamic-tab-templates/test-two/test-two.component';
-import { DataMapComponent } from './controls/data-map/data-map.component';
 import { LazyElementModule } from '@lowcodeunit/lazy-element';
+import { DataMapComponent } from './controls/data-map/data-map.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +30,8 @@ import { LazyElementModule } from '@lowcodeunit/lazy-element';
           WarmStorageComponent, 
           DynamicTabTemplatesComponent, 
           TestOneComponent, 
-          TestTwoComponent],
+          TestTwoComponent,
+          DataMapComponent],
   imports: [
     BrowserAnimationsModule,
     AppRoutingModule,
@@ -50,11 +51,12 @@ import { LazyElementModule } from '@lowcodeunit/lazy-element';
     }
   ],
   bootstrap: [AppComponent],
-  exports: [WarmStorageComponent, DynamicTabTemplatesComponent, TestOneComponent, TestTwoComponent],
+  exports: [WarmStorageComponent, DynamicTabTemplatesComponent, TestOneComponent, TestTwoComponent, DataMapComponent],
   entryComponents: [
     WarmStorageComponent,
     DynamicTabTemplatesComponent,
     TestOneComponent,
-    TestTwoComponent]
+    TestTwoComponent, 
+    DataMapComponent]
 })
 export class AppModule {}
