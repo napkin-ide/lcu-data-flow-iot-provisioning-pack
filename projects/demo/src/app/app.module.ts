@@ -15,11 +15,23 @@ import {
 import { LcuDataFlowIotProvisioningPackModule } from '@napkin-ide/lcu-data-flow-iot-provisioning-pack-common';
 import { DeviceStreamComponent } from './controls/device-stream/device-stream.component';
 import { DataStreamComponent } from './controls/data-stream/data-stream.component';
-import { DataMapComponent } from './controls/data-map/data-map.component';
+import { WarmStorageComponent } from './controls/warm-storage/warm-storage.component';
+import { DynamicTabTemplatesComponent } from './controls/dynamic-tab-templates/dynamic-tab-templates.component';
+import { TestOneComponent } from './controls/dynamic-tab-templates/test-one/test-one.component';
+import { TestTwoComponent } from './controls/dynamic-tab-templates/test-two/test-two.component';
 import { LazyElementModule } from '@lowcodeunit/lazy-element';
+import { DataMapComponent } from './controls/data-map/data-map.component';
 
 @NgModule({
-  declarations: [AppComponent, DataMapComponent, DataStreamComponent, DeviceStreamComponent],
+  declarations: [
+          AppComponent, 
+          DataStreamComponent, 
+          DeviceStreamComponent, 
+          WarmStorageComponent, 
+          DynamicTabTemplatesComponent, 
+          TestOneComponent, 
+          TestTwoComponent,
+          DataMapComponent],
   imports: [
     BrowserAnimationsModule,
     AppRoutingModule,
@@ -39,7 +51,12 @@ import { LazyElementModule } from '@lowcodeunit/lazy-element';
     }
   ],
   bootstrap: [AppComponent],
-  exports: [],
-  entryComponents: []
+  exports: [WarmStorageComponent, DynamicTabTemplatesComponent, TestOneComponent, TestTwoComponent, DataMapComponent],
+  entryComponents: [
+    WarmStorageComponent,
+    DynamicTabTemplatesComponent,
+    TestOneComponent,
+    TestTwoComponent, 
+    DataMapComponent]
 })
 export class AppModule {}

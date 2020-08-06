@@ -1,3 +1,4 @@
+import { InfrastructureModel } from './../../models/infrastructure.model';
 import { Component, OnInit, Injector } from '@angular/core';
 import {
   LCUElementContext,
@@ -5,6 +6,7 @@ import {
   DataFlowModule
 } from '@lcu/common';
 import { LCUChart } from '../../models/chart';
+import { ConnectionStringModel } from '../../models/connection-string.model';
 
 export class LcuDataFlowIotProvisioningPackDataStreamElementState {
   public ActivityLogs?: string[];
@@ -12,11 +14,12 @@ export class LcuDataFlowIotProvisioningPackDataStreamElementState {
   public APIKeys?: { Name: string, Value: string }[];
 
   public Chart: LCUChart;
+
+  public Infrastructure: InfrastructureModel;
 }
 
-export class LcuDataFlowIotProvisioningPackDataStreamContext extends LCUElementContext<
-  LcuDataFlowIotProvisioningPackDataStreamElementState
-> {
+export class LcuDataFlowIotProvisioningPackDataStreamContext extends 
+LCUElementContext<LcuDataFlowIotProvisioningPackDataStreamElementState> {
   public Module: DataFlowModule;
 }
 
