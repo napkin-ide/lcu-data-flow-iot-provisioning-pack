@@ -71,6 +71,7 @@
 					"Description": "Query Warm Storage assets.",
 					"IncomingConnectionLimit": -1,
 					"IncomingConnectionTypes": [
+						"cold-storage",
 						"warm-storage"
 					],
 					"Name": "Warm Query",
