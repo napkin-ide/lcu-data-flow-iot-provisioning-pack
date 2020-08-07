@@ -12,3 +12,4 @@ export * from './lib/elements/data-emulator/data-emulator.component';
 export * from './lib/elements/warm-query/warm-query.component';
 export * from './lib/controls/connection-strings/connection-strings.component';
 export * from './lib/models/component-tab.model';
+export * from './lib/elements/machine-learning/machine-learning.component';

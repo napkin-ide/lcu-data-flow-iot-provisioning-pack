@@ -18,7 +18,7 @@ import {
   LcuDataFlowIotProvisioningPackDataMapElementComponent,
   SelectorLcuDataFlowIotProvisioningPackDataMapElement,
   LcuDataFlowIotProvisioningPackDataEmulatorElementComponent,
-  SelectorLcuDataFlowIotProvisioningPackDataEmulatorElement
+  SelectorLcuDataFlowIotProvisioningPackDataEmulatorElement, LcuDataFlowIotProvisioningPackMachineLearningElementComponent, SELECTOR_LCU_DATA_FLOW_IOT_PROVISIONING_PACK_MACHINE_LEARNING_ELEMENT
 } from '@napkin-ide/lcu-data-flow-iot-provisioning-pack-common';
 import { ElementZoneStrategyFactory } from 'elements-zone-strategy';
 
@@ -109,5 +109,9 @@ export class AppModule implements DoBootstrap {
       SelectorLcuDataFlowIotProvisioningPackDataMapElement,
       dmMgr
     );
-  }
+  
+		const machineLearning = createCustomElement(LcuDataFlowIotProvisioningPackMachineLearningElementComponent, { injector: this.injector });
+
+		customElements.define(SELECTOR_LCU_DATA_FLOW_IOT_PROVISIONING_PACK_MACHINE_LEARNING_ELEMENT, machineLearning);
+	}
 }

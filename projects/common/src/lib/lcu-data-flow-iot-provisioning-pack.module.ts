@@ -14,6 +14,7 @@ import { LcuDataFlowIotProvisioningPackWarmQueryElementComponent } from './eleme
 import { ConnectionStringsComponent } from './controls/connection-strings/connection-strings.component';
 import { DynamicTabsComponent } from './controls/dynamic-tabs/dynamic-tabs.component';
 import { ChartsComponent } from './controls/charts/charts.component';
+import { LcuDataFlowIotProvisioningPackMachineLearningElementComponent } from './elements/machine-learning/machine-learning.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ChartsComponent } from './controls/charts/charts.component';
     LcuDataFlowIotProvisioningPackWarmQueryElementComponent,
     ConnectionStringsComponent,
     DynamicTabsComponent,
-    ChartsComponent
+    ChartsComponent,
+    LcuDataFlowIotProvisioningPackMachineLearningElementComponent
   ],
   entryComponents: [
     LcuDataFlowIotProvisioningPackDataStreamElementComponent,
@@ -40,7 +42,8 @@ import { ChartsComponent } from './controls/charts/charts.component';
     LcuDataFlowIotProvisioningPackWarmQueryElementComponent,
     ConnectionStringsComponent,
     DynamicTabsComponent,
-    ChartsComponent
+    ChartsComponent,
+    LcuDataFlowIotProvisioningPackMachineLearningElementComponent
   ],
   exports: [
     LcuDataFlowIotProvisioningPackDataStreamElementComponent,
@@ -53,7 +56,8 @@ import { ChartsComponent } from './controls/charts/charts.component';
     LcuDataFlowIotProvisioningPackWarmQueryElementComponent,
     ConnectionStringsComponent,
     DynamicTabsComponent,
-    ChartsComponent
+    ChartsComponent,
+    LcuDataFlowIotProvisioningPackMachineLearningElementComponent
   ],
   imports: [
     FathymSharedModule,

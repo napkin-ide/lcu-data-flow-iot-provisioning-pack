@@ -8,7 +8,11 @@
 		"wc": [
 			"wc/lcu-data-flow-iot-provisioning-pack.lcu.js"
 		],
-		"solutions": {},
+		"solutions": {
+			"machine-learning": {
+				"element": "lcu-data-flow-iot-provisioning-pack-machine-learning-element"
+			}
+		},
 		"elements": {},
 		"data-flows": {
 			"Pack": {
@@ -76,7 +80,9 @@
 					],
 					"Name": "Warm Query",
 					"OutgoingConnectionLimit": 0,
-					"OutgoingConnectionTypes": []
+					"OutgoingConnectionTypes": [
+						"machine-learning"
+					]
 				},
 				{
 					"ModuleType": "warm-storage",
@@ -119,6 +125,20 @@
 						"cold-storage",
 						"warm-storage",
 						"hot-storage"
+					]
+				},
+				{
+					"ModuleType": "machine-learning",
+					"ControlType": "Gate",
+					"Description": "Machine learning support and connections.",
+					"IncomingConnectionLimit": 1,
+					"IncomingConnectionTypes": [
+						"warm-query"
+					],
+					"Name": "Data Map",
+					"OutgoingConnectionLimit": -1,
+					"OutgoingConnectionTypes": [
+						"data-map"
 					]
 				}
 			],
@@ -210,6 +230,17 @@
 					},
 					"Width": 200,
 					"Shape": "Custom"
+				},
+				{
+					"ModuleType": "machine-learning",
+					"Category": "Data Science",
+					"Element": "machine-learning",
+					"Height": 200,
+					"Icon": {
+						"Icon": "science"
+					},
+					"Width": 200,
+					"Shape": "Ellipse"
 				}
 			]
 		},
