@@ -9,9 +9,6 @@
 			"wc/lcu-data-flow-iot-provisioning-pack.lcu.js"
 		],
 		"solutions": {
-			"machine-learning": {
-				"element": "lcu-data-flow-iot-provisioning-pack-machine-learning-element"
-			}
 		},
 		"elements": {},
 		"data-flows": {
@@ -131,11 +128,11 @@
 					"ModuleType": "machine-learning",
 					"ControlType": "Gate",
 					"Description": "Machine learning support and connections.",
-					"IncomingConnectionLimit": 1,
+					"IncomingConnectionLimit": -1,
 					"IncomingConnectionTypes": [
 						"warm-query"
 					],
-					"Name": "Data Map",
+					"Name": "Machine Learning",
 					"OutgoingConnectionLimit": -1,
 					"OutgoingConnectionTypes": [
 						"data-map"
