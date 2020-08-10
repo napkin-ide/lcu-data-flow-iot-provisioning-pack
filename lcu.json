@@ -63,8 +63,10 @@
 						"data-map"
 					],
 					"Name": "Cold Storage",
-					"OutgoingConnectionLimit": 0,
-					"OutgoingConnectionTypes": []
+					"OutgoingConnectionLimit": -1,
+					"OutgoingConnectionTypes": [
+						"warm-query"
+					]
 				},
 				{
 					"ModuleType": "warm-query",
@@ -76,7 +78,7 @@
 						"warm-storage"
 					],
 					"Name": "Warm Query",
-					"OutgoingConnectionLimit": 0,
+					"OutgoingConnectionLimit": -1,
 					"OutgoingConnectionTypes": [
 						"machine-learning"
 					]
