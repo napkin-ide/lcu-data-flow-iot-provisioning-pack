@@ -25,7 +25,7 @@ export class DynamicTabTemplatesComponent implements OnInit {
     // this.Components = [
       // new TabComponentModel({ Component: TestOneComponent, Label: 'Test One' }),
       // new TabComponentModel({ Component: ChartsComponent,
-      //                         Data: this.context.State.Infrastructure.Connections,
+      //                         Data: this.Context.State.Infrastructure.Connections,
       //                         Label: 'Activity Log' }),
       // new TabComponentModel({ Component: ConnectionStringsComponent, 
       //                         Data: this.warmStorage()['Infrastructure']['Connections'], 

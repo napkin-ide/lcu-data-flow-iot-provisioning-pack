@@ -1,15 +1,15 @@
-<ng-container *ngIf="context && context.State">
+<ng-container *ngIf="Context && Context.State">
   <mat-tab-group>
     <mat-tab label="Overview">
       <canvas
-        *ngIf="context.State.Chart"
+        *ngIf="Context.State.Chart"
         baseChart
         chartType="line"
         [legend]="false"
-        [options]="context.State.Chart.Options"
-        [labels]="context.State.Chart.Labels"
-        [colors]="context.State.Chart.Colors"
-        [datasets]="context.State.Chart.Results"
+        [options]="Context.State.Chart.Options"
+        [labels]="Context.State.Chart.Labels"
+        [colors]="Context.State.Chart.Colors"
+        [datasets]="Context.State.Chart.Results"
       ></canvas>
     </mat-tab>
 
@@ -21,7 +21,7 @@
 
         <mat-card-content>
           <mat-list>
-            <mat-list-item *ngFor="let apiKey of context.State.APIKeys">
+            <mat-list-item *ngFor="let apiKey of Context.State.APIKeys">
               <mat-form-field>
                 <input
                   matInput
@@ -64,21 +64,21 @@
 
     <mat-tab label="Connection Strings">
       <lcu-connection-strings 
-        [data]="context.State.Infrastructure.Connections"
+        [data]="Context.State.Infrastructure.Connections"
         [copy-to-clipboard]="true">
       </lcu-connection-strings>
     </mat-tab>
 
     <mat-tab label="Activity Log">
       <mat-list>
-        <mat-list-item *ngFor="let actLog of context.State.ActivityLogs">
+        <mat-list-item *ngFor="let actLog of Context.State.ActivityLogs">
           {{ actLog }}
         </mat-list-item>
 
         <mat-list-item
           *ngIf="
-            !context.State.ActivityLogs ||
-            context.State.ActivityLogs.length == 0">
+            !Context.State.ActivityLogs ||
+            Context.State.ActivityLogs.length == 0">
           <p>There are currently no activity logs to view.</p>
 
           <button
