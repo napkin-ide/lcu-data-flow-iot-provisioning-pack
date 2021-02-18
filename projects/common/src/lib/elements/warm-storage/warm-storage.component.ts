@@ -42,7 +42,7 @@ LcuElementComponent<LcuDataFlowIotProvisioningPackWarmStorageContext> implements
 
     this.Title = 'Warm Storage Connection Strings';
     // if (this.context) {
-    //    console.log('constructor', this.context.State.Infrastructure.Connections);
+    //    console.log('constructor', this.Context.State.Infrastructure.Connections);
     // }
   }
 
@@ -68,10 +68,10 @@ LcuElementComponent<LcuDataFlowIotProvisioningPackWarmStorageContext> implements
   protected setupComponents(): void {
     this.Components = [
       new TabComponentModel({ Component: ChartsComponent,
-                              Data: this.context.State.Chart,
+                              Data: this.Context.State.Chart,
                               Label: 'Overview' }),
       new TabComponentModel({ Component: ConnectionStringsComponent,
-                              Data: this.context.State.Infrastructure.Connections,
+                              Data: this.Context.State.Infrastructure.Connections,
                               Label: 'Connection Strings' })
     ];
   }

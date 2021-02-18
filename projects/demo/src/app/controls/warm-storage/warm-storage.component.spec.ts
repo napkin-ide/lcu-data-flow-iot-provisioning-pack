@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { WarmStorageComponent } from './warm-storage.component';
 
@@ -6,7 +6,7 @@ describe('WarmStorageComponent', () => {
   let component: WarmStorageComponent;
   let fixture: ComponentFixture<WarmStorageComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ WarmStorageComponent ]
     })
